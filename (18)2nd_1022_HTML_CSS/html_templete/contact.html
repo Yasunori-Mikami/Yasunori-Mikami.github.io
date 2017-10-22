@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keyword" content="ポートフォリオ,三上泰徳">
+    <meta name="description" content="あああああああああああ">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>YASUNORI MIKAMI_PORTOFOLIO</h1>
+        <img src="" alt="" class="">
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="">ARTICLES</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>CONTACT</h2>
+        <p>お問合わせはこちらから</p>
+        <form action="formmail.php">
+            <table border="1">
+                <tr>
+                    <th>お名前</th>
+                    <td><input type="text" name="contact-name" maxlength="20" placeholder="例：三上泰徳"></td>
+                </tr>
+                <tr>
+                    <th>企業/個人</th>
+                    <td>
+                        <input type="radio" name="contact-type" value="com" checked>企業
+                        <input type="radio" name="contact-type" value="person">個人
+                    </td>
+                </tr>
+                <tr>
+                    <th>お問い合わせ内容</th>
+                    <td>
+                        <select name="contact-list">
+                            <option value="design">デザイン制作</option>
+                            <option value="seminar">セミナー</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>その他</th>
+                    <td>
+                        <textarea name="contact-contents" cols="40" rows="10"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <th>利用規約</th>
+                    <td>
+                        <input type="checkbox" name="contact-agrement" value="agree">同意します
+                        <!-- <input type="checkbox" name="contact-agrement" value="disagree" checked>同意しません -->
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="確認して次に進む"></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    <footer>
+        <p>©copyright YASUNORI MIKAMI. All Right Reserved</p>
+    </footer>
+</body>
+</html>
