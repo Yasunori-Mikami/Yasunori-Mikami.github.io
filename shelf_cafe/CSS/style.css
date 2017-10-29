@@ -1,0 +1,73 @@
+/* Common Style  全体にかかるスタイルの意味*/
+
+body{
+    font-size: 16px;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    line-height: 1.5;
+}
+
+a{
+    color: #0099CC;
+    text-decoration: underline;
+}
+a:hover{
+    color: #CCCCCC;
+}
+
+header{
+    width: 950px;
+    margin: 40px auto;
+}
+
+nav {
+    width: 950px;
+    margin: 0 auto 40px;
+}
+
+/* main-visual */
+.main-visual {
+    width: 950px;
+    margin: 0 auto 40px;
+}
+
+/* .container*/
+.container {
+    width: 950px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container h2 {
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px #000000 solid;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.new{
+    width: 310px;
+}
+
+.about{
+    width: 310px;
+}
+
+.menu{
+    width: 310px;
+}
+
+.menu section{
+    width: 150px;
+}
+
+/* footer*/
+footer{
+    width: 950px;
+    margin: 0 auto 40px;
+    border-top: 1px #000000 solid;
+    padding-top: 20px;
+    font-size: 11px;
+    text-align: right;
+}
