@@ -8,11 +8,10 @@
 </head>
 <body>
     <h1>geolocation | GPSのテスト</h1>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <dl id="weatherMap">
+        <dt>地域名：</dt>
+        <dd id="areaName"></dd>
+    </dl>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
     //DOMの読み込み
@@ -42,7 +41,7 @@
             const apikey = '58ba21618b62f1a51a5b8654ed1f8aa0';
 
             //OpenWeatherMap用のURL
-            var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid=' + apikey;
+            var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+ apikey;
 
             //ajax通信
             $.ajax({
@@ -57,10 +56,13 @@
                 //通信成功
                 console.log(data);
 
+                //地域名
+                var areaName = date.name;
+                $('#areaName').text(areaName);
+
             }).fail(function(){
                 //通信失敗
                 console.log('ajax error');
-
             });
         }
 
