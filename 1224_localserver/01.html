@@ -29,7 +29,11 @@
             //Y軸
             var y = evt.accelerarion.y;
             //Z軸
-            var y = evt.acceleration.z;
+            var z = evt.acceleration.z;
+
+            $('ul li:eq(0)').text('x: ' + x);
+            $('ul li:eq(0)').text('y: ' + y);
+            $('ul li:eq(0)').text('z: ' + z);
         });
     });
     </script>
