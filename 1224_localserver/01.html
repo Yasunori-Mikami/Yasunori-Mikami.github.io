@@ -21,7 +21,10 @@
 
         //devicemotion event
         //devicemotionで加速度を取得することができる。取得した数値は引数(evt)に入る
-        window.addEventListener('devicemotion',function(evt){
+        window.addEventListener('devicemotion',shakeDevice);
+
+        //スマフォを振ったら呼び出される関数
+        function shakeDevice(evt){
             console.log(evt);
 
             //X軸
@@ -34,6 +37,13 @@
             $('ul li:eq(0)').text('x: ' + x);
             $('ul li:eq(1)').text('y: ' + y);
             $('ul li:eq(2)').text('z: ' + z);
+
+            //もしスマフォを振ったら
+            //Mathで絶対値の取得
+            if( Math.abs(x) > 10 || Math.abs(y) || Math.abs(z) ){  //Xの絶対値が10以上になったら
+                $('h1').text('振り終わったよ');
+                window.removeEventLister('devicemotion', shakeDevice);//再帰関数
+            });
         });
     });
     </script>
