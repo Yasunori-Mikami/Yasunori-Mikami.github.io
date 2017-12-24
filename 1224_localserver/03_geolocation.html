@@ -52,12 +52,12 @@
                 dataType:'json'
 
             //うまく通信できればdoneの処理、失敗すればfailの処理
-            }).done(function(date){
+        }).done(function(data){
                 //通信成功
                 console.log(data);
 
                 //地域名
-                var areaName = date.name;
+                var areaName = data.name;
                 $('#areaName').text(areaName);
 
             }).fail(function(){
