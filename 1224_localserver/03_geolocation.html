@@ -28,9 +28,41 @@
 
             lat = calLocation(lat);
             lon = calLocation(lon);
-
             console.log('緯度: ' + lat, '経度: ' +lon );
+
+            //緯度経度を天気を表示する関数に受け渡しする
+            setWeather(lat,lon);
         });
+
+        //天気を表示する関数
+        function setWeather(lat,lon){
+
+            //Open wather MapのAPIキー
+            //const : 定数の意味　絶対に上書きが発生しない意味　varでもOKだが
+            const apikey = '58ba21618b62f1a51a5b8654ed1f8aa0';
+
+            //OpenWeatherMap用のURL
+            var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid=' + apikey;
+
+            //ajax通信
+            $.ajax({
+                //どこと通信したいか？
+                url:weatherUrl,    //セミコロンではない
+
+                //通信ファイル形式　htmlなど
+                dataType: 'json'
+
+            //うまく通信できればdoneの処理、失敗すればfailの処理
+            }).done(function(date){
+                //通信成功
+                console.log(data);
+
+            }).fail(function(){
+                //通信失敗
+                console.log('ajax error');
+
+            });
+        }
 
         //細かい数値は取得できないので、小数点の切り上げ　かつ　少数点2ケタも取りたい→Math.floorを使う
         //少数2桁で切り捨てる関数を自作する
