@@ -23,6 +23,13 @@
         //devicemotionで加速度を取得することができる。取得した数値は引数(evt)に入る
         window.addEventListener('devicemotion',function(evt){
             console.log(evt);
+
+            //X軸
+            var x = evt.acceleration.x;
+            //Y軸
+            var y = evt.accelerarion.y;
+            //Z軸
+            var y = evt.acceleration.z;
         });
     });
     </script>
