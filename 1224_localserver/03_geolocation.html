@@ -7,7 +7,7 @@
     <title>devicemotion</title>
 </head>
 <body>
-    <h1>deviceorientation(ジャイロ)のテスト</h1>
+    <h1>geolocation | GPSのテスト</h1>
     <ul>
         <li></li>
         <li></li>
@@ -19,25 +19,11 @@
     $(function(){
         console.log('読み込んだよ');
 
-        //devicemotion event ジャイロ
-        //deviceorientationでジャイロを取得することができる。取得した数値は引数(evt)に入る
-        window.addEventListener('deviceorientation',orienDevice);
+        //GPSからの緯度経度の取得  ,引数：pos
+        navigator.geolocation.getCurrentPosition(function(pos){
+            console.log(pos);
+        });
 
-        //スマフォを振ったら呼び出される関数
-        function orienDevice(evt){
-            console.log(evt);
-
-            //X軸
-            var x = evt.beta; //deviceorientationではxが　beta
-            //Y軸
-            var y = evt.gamma;  //yのこと
-            //Z軸
-            var z = evt.alpha; //z
-
-            $('ul li:eq(0)').text('x: ' + x);
-            $('ul li:eq(1)').text('y: ' + y);
-            $('ul li:eq(2)').text('z: ' + z);
-        }
     });
     </script>
 </body>
