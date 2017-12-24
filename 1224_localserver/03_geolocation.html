@@ -28,6 +28,15 @@
             console.log('緯度: ' + lat, '経度: ' +lon );
         });
 
+        //細かい数値は取得できないので、小数点の切り上げ　かつ　少数点2ケタも取りたい→Math.floorを使う
+        //少数2桁で切り捨てる関数を自作する
+        function calLocation(num){
+            var numA = num*100; //2桁上がる
+            numA = Math.floor(numA)/100;    //Math.floorで2桁上げた数値の小数点を切り捨て、さらに100で割って2桁下げる
+
+            return numA;
+        }
+
     });
     </script>
 </body>
