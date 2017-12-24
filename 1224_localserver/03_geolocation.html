@@ -11,6 +11,13 @@
     <dl id="weatherMap">
         <dt>地域名：</dt>
         <dd id="areaName"></dd>
+        <dt>現在の気温</dt>
+        <dd id="areaTemp"></dd>
+        <dt>湿度</dt>
+        <dd id="areaHumidity"></dd>
+        <dt>天気</dt>
+        <dd id="areaWeather"></dd>
+        <dd id="weatherIcon"></dd>
     </dl>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script>
@@ -41,7 +48,7 @@
             const apikey = '58ba21618b62f1a51a5b8654ed1f8aa0';
 
             //OpenWeatherMap用のURL
-            var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+ apikey;
+            var weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?lat='+lat+'&lon='+lon+'&appid='+ apikey;
 
             //ajax通信
             $.ajax({
@@ -59,6 +66,24 @@
                 //地域名
                 var areaName = data.name;
                 $('#areaName').text(areaName);
+
+                //気温
+                var areaTemp = data.main.temp;  //　絶対温度　cosoleで取得する項目を指定
+                areaTemp = areaTemp - 273.15; //　摂氏に変換
+                $('#areaTemp').text(Math.round(areaTemp)+'度'); //Math.round で四捨五入
+
+                //湿度
+                var areaHumidity = data.main.humidity;
+                $('#areaHumidity').text(areaHumidity+'度');
+
+                //天気
+                var areaWeather = data.weather[0].description;
+                $('#areaWeather').text(areaWeather);
+
+                //天気アイコン
+                var weatherIcon = 'https://openweathermap.org/img/w/'+data.weather[0].icon+'.png';
+                $('#weatherIcon').append('<img src=" '+weatherIcon+' ">');   //Htmlのddタグの中にimgタグを組み込みたい
+
 
             }).fail(function(){
                 //通信失敗
