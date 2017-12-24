@@ -40,7 +40,7 @@
 
             //もしスマフォを振ったら
             //Mathで絶対値の取得
-            if( Math.abs(x) > 10 || Math.abs(y) > 10 || Math.abs(z) > 10 ){  //Xの絶対値が10以上になったら
+            if( Math.abs(x) > 20 || Math.abs(y) > 20 || Math.abs(z) > 20 ){  //Xの絶対値が10以上になったら
                 $('h1').text('振り終わったよ');
                 //alert('振り終わったよ');
                 window.removeEventLister('devicemotion', shakeDevice);//再帰関数
