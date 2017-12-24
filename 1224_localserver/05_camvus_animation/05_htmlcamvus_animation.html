@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="stage" width="500" height="500"></canvas>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="sprite.js"></script>
+    <script>
+        // DOMの読み込み
+        $(function(){
+            // canvasの取得
+            var stage = new createjs.Stage('stage');
+
+            // 画像の登録
+            var manifest = [
+                {src: 'img/tomato.png'},  //manifestの0番
+                {src: 'img/calcium.png'}　//manifestの1番　
+            ];
+
+            // loadQueue プリロード（先読み）
+            var loadQueue = new createjs.LoadQueue();
+
+            //ファイルの指定　読み込み開始
+            loadQueue.loadManifest(manifest);
+
+            //イベント：画像を全部読み込み終わってからアニメーションスタート
+            loadQueue.addEventListener('complete',function(){
+                console.log('読み込み完了');
+                addStage();
+            });
+
+            //ステージに配置
+            function addStage(){
+                //Bitmao　背景画像はビットマップ
+                var tomato = new createjs.Bitmap(manifest[0].src);
+                stage.addChild(tomato);
+                tomato.x = 100;
+                tomato.y = 100;
+                tomato.alpha = 0;
+                createjs.Tween.get(tomato).wait(500).to({alpha:1},1000);
+
+                //------------sprite----------------|
+                //コマ送りの画像はスプライトシート
+                var calciumSpriteSheet = new createjs.SpriteSheet(calciumSprite);
+                var calcium = new createjs.Sprite(calciumSpriteSheet, 'stand');
+                stage.addChild(calcium);
+                calcium.x = 0;
+                calcium.y = 300;
+                calcium.alpha = 0;
+                createjs.Tween.get(calcium).wait(1000).to({alpha:1},1000);
+                //クリックしたら動き出す
+                calcium.addEventListener('click',function(){
+                    createjs.Tween.get(calcium).call(calciumWalk).to({x:400},2000).call(calciumStop);
+                    //基本はtoで繋げて、callで関数を呼び細かい動きを制御
+                })
+
+                //歩いている時にコマを変える
+                function calciumWalk(){
+                    calcium.gotoAndPlay('walk');//sprite.jsで指定したwalk
+                }
+
+                //終わったら止まるコマに変更
+                function calciumStop(){
+                    calcium.gotoAndPlay('stop')
+                }
+            }
+
+            createjs.Ticker.addEventListener('tick',tick);
+            // requestAnimationFrameの実行
+            createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
+
+            function tick(){
+                stage.update(); //描画の更新
+            }
+
+
+        });
+    </script>
+</body>
+</html>
