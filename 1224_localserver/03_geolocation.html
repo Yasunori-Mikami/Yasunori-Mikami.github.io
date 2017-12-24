@@ -25,6 +25,10 @@
 
             var lat = pos.coords.latitude; //緯度
             var lon = pos.coords.longitude; //経度
+
+            lat = calLocation(lat);
+            lon = calLocation(lon);
+
             console.log('緯度: ' + lat, '経度: ' +lon );
         });
 
@@ -36,7 +40,6 @@
 
             return numA;
         }
-
     });
     </script>
 </body>
