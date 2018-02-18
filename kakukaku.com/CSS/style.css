@@ -42,7 +42,7 @@ a:hover{
 
 
 .pankuzu {
-    padding: 5px 70px;
+    padding: 5px 90px;
     font-size: 10px;
     color: #4a4a4a;
 }
@@ -205,7 +205,7 @@ nav ul li {
 	color: #ffffff;
     padding-top: 130px;
     position: relative;
-    top: -500px;
+    top: -490px;
     z-index: 1;
     -webkit-text-stroke: 0.2px #44a5cb;
 }
@@ -1284,12 +1284,12 @@ footer .end-copy{
 
 /*--プロフィールTOP--*/
 .writerProfile-top {
-    height: 310px;
+    height: 280px;
     width: 100%;
     background: url(../img/page-writer-profile/pexels-photo-129441.jpeg) center  center no-repeat;
     background-size: cover;
     overflow: hidden; /*floatの親要素に入れる*/
-    padding: 40px 70px;
+    padding: 40px 90px;
 }
 
 .writerProfile-top img {
@@ -1308,8 +1308,50 @@ footer .end-copy{
 }
 
 .writerProfile-top h1 {
+    font-family: HiraginoSans-W5;
+	font-size: 24px;
+	text-align: left;
+	color: #000000;
+    margin-bottom: 20px;
 }
 
+.writerProfile-top-catch {
+    font-family: HiraginoSans-W4;
+	font-size: 16px;
+	line-height: 1.7;
+	text-align: left;
+    color: #000000;
+    margin-bottom: 20px;
+    max-width: 680px;
+}
+
+.writerProfile-top-star {
+    margin-bottom: 15px;
+    font-family: HiraginoSans-W4;
+    font-size: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+.writerProfile-top-box {
+    overflow: hidden; /*floatの親要素に入れる*/
+}
+
+.writerProfile-top-item-left {
+    float: left;
+}
+
+.writerProfile-top-item-right {
+    float: right;
+}
+
+.writerProfile-top-box p {
+    margin-bottom: 5px;
+    font-family: HiraginoSans-W4;
+    font-size: 14px;
+    text-align: left;
+    color: #000000;
+}
 
 /*--プロフィール本体--*/
 .writerProfile-body {
@@ -1383,6 +1425,7 @@ footer .end-copy{
 
 .writerProfile-social {
     margin-top: 35px;
+    margin-bottom: -35px;
 }
 
 .writerProfile-socia-icon {
