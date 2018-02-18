@@ -386,6 +386,10 @@ nav ul li {
     overflow: hidden; /*floatの親要素に入れる*/
 }
 
+.top-writer-item:hover {
+    opacity: 0.8;
+}
+
 .top-writer-item-lowLayer {
     margin-top: 30px;
 }
