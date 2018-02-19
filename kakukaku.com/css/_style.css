@@ -40,13 +40,24 @@ a:hover{
     margin-left: 10px;
 }
 
+.mr10 {
+    margin-right: 10px;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
 
 .pankuzu {
     padding: 5px 90px;
     font-size: 10px;
     color: #4a4a4a;
 }
-
 
 
 /* Loading ---------------------*/
@@ -204,11 +215,13 @@ nav ul li {
 	text-align: center;
 	color: #ffffff;
     padding-top: 130px;
+
     position: relative;
-    top: -490px;
+    top: -500px;
     z-index: 1;
     -webkit-text-stroke: 0.2px #44a5cb;
 }
+
 
 .top-img .sub-title {
     font-size: 20px;
@@ -488,16 +501,26 @@ nav ul li {
 
 .top-sec-back-categry section a {
     font-size: 12px;
-	color: #828282;
     font-family: HiraginoSans-W6;
     display: block;
     padding: 38px 0 ;
+    color: #828282;
 }
 
 .top-sec-back-categry section a img {
     width: 35px;
 }
 
+.top-sec-back-categry section:hover {
+    border: none;
+    margin: 0.5px;
+    background-color: #40bfb0;
+    color: #ffffff;
+}
+
+.top-sec-back-categry section a:hover {
+    color: #ffffff;
+}
 
 
 /*------記事ジャンルからライターを探す ---------- */
@@ -1090,11 +1113,6 @@ footer .end-copy{
     color: #737375;
 }
 
-.writerList-main-column .search-option-item:hover {
-	background-color: #4a4a4a;
-    color: #ffffff;
-}
-
 /*チェックボックスの仕様*/
 .search-option-item input{
   display: none;
@@ -1109,6 +1127,11 @@ footer .end-copy{
 }
 .search-option-item .radio_box:checked + .search-option-label {
     background-color: #4a4a4a;
+    color: #ffffff;
+}
+
+.writerList-main-column .search-option-item:hover {
+	background-color: #4a4a4a;
     color: #ffffff;
 }
 
@@ -1284,12 +1307,18 @@ footer .end-copy{
 
 /*--プロフィールTOP--*/
 .writerProfile-top {
-    height: 280px;
+    height: 320px;
     width: 100%;
     background: url(../img/page-writer-profile/pexels-photo-129441.jpeg) center  center no-repeat;
     background-size: cover;
     overflow: hidden; /*floatの親要素に入れる*/
-    padding: 40px 90px;
+}
+
+/*背景透過用！*/
+.bg-mask {
+  height: 100%;
+  background: rgba(255,255,255,0.7);
+  padding: 40px 80px;
 }
 
 .writerProfile-top img {
@@ -1305,13 +1334,14 @@ footer .end-copy{
 .writerProfile-top-info {
     float: left;
     margin-left: 50px;
+    max-width: 65%;
 }
 
 .writerProfile-top h1 {
     font-family: HiraginoSans-W5;
 	font-size: 24px;
 	text-align: left;
-	color: #000000;
+	color: #4a4a4a;
     margin-bottom: 20px;
 }
 
@@ -1320,9 +1350,8 @@ footer .end-copy{
 	font-size: 16px;
 	line-height: 1.7;
 	text-align: left;
-    color: #000000;
+    color: #4a4a4a;
     margin-bottom: 20px;
-    max-width: 680px;
 }
 
 .writerProfile-top-star {
@@ -1330,7 +1359,7 @@ footer .end-copy{
     font-family: HiraginoSans-W4;
     font-size: 14px;
     text-align: left;
-    color: #000000;
+    color: #4a4a4a;
 }
 
 .writerProfile-top-box {
@@ -1342,7 +1371,8 @@ footer .end-copy{
 }
 
 .writerProfile-top-item-right {
-    float: right;
+    float: left;
+    margin-left: 20%;
 }
 
 .writerProfile-top-box p {
@@ -1350,7 +1380,7 @@ footer .end-copy{
     font-family: HiraginoSans-W4;
     font-size: 14px;
     text-align: left;
-    color: #000000;
+    color: #4a4a4a;
 }
 
 /*--プロフィール本体--*/
@@ -1377,7 +1407,6 @@ footer .end-copy{
 	font-size: 13px;
 	line-height: 1.7;
 	text-align: left;
-    margin-bottom: 10px;
 }
 
 
@@ -1396,32 +1425,29 @@ footer .end-copy{
     margin-right: 10px;
 }
 
+.writerProfile-line {
+    display: block;
+    background: url(../img/page-writer-profile/substract.png) ;
+    background-repeat: repeat-x;
+    overflow: hidden; /*floatの親要素に入れる*/
+}
 
 .writerProfile-line-left {
     background-color: #f9f9f9;
-    position: relative;
-    top: 0px;
-    max-width: 250px;
+    float: left;
     z-index: 1;
+    padding-right: 15px;
+    margin: -bottom: 10px;
 }
 
 .writerProfile-line-right {
     background-color: #f9f9f9;
     padding-left: 15px;
-    position: relative;
-    top: -42px;
-    right: -580px;
     text-align: left;
+    float: right;
+    z-index: 1;
 }
 
-.writerProfile-line {
-    height: 1px;
-    background: url(../img/page-writer-profile/substract.png) center  center no-repeat;
-    background-size: cover;
-    line-height: 3;
-    position: relative;
-    top: -22px;
-}
 
 .writerProfile-social {
     margin-top: 35px;
@@ -1437,10 +1463,10 @@ footer .end-copy{
 /*--ポートフォリオ--*/
 .writerProfile-portfolio {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    width: 650px;
+    flex-wrap: wrap;
     margin: 0 auto;
+    width: 90%;
 }
 
 .writerProfile-portfolio div {
@@ -1477,3 +1503,328 @@ footer .end-copy{
 
 
 /*--担当者からのメッセージ--*/
+.writerProfile-comment-box {
+    margin-bottom: 25px;
+    overflow: hidden; /*floatの親要素に入れる*/
+}
+
+.writerProfile-comment-pic {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+.writerProfile-comment-pic img {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    border: solid 2px #979797;
+}
+
+.writerProfile-comment-pic h3 {
+    margin-top: 5px;
+    font-family: HiraginoSans-W3;
+    font-size: 12px;
+    color: #828282;
+}
+
+.writerProfile-comment-text {
+    float: left;
+    width: 65%;
+    margin-left: 10px;
+    background-color: #ffffff;
+    padding: 12px;
+}
+
+.writerProfile-comment-moreInfo {
+    margin-top: 10px;
+    border-top: solid 0.5px #979797;
+    padding-top: 5px;
+}
+
+.writerProfile-comment-moreInfo p {
+    display: inline;
+    color: #828282;
+}
+
+
+/*吹き出し*/
+.writerProfile-comment-box .balloon1-left {
+ 	position: relative;
+	display: inline-block;
+	min-width: 120px;
+ 	max-width: 100%;
+}
+
+.writerProfile-comment-box .balloon1-left:before{
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: -30px;
+ 	margin-top: -15px;
+	border: 15px solid transparent;
+	border-right: 15px solid #ffffff;
+}
+
+
+
+
+
+/*------ライターおすすめ欄-----------*/
+
+.writerProfile-recomend {
+    padding: 0 120px;
+    margin-bottom: 70px;
+}
+
+.writerProfile-recomend h2 {
+    font-family: HiraginoSans-W5;
+	font-size: 18px;
+	text-align: left;
+	color: #4a4a4a;
+    margin-bottom: 20px;
+    margin-left: 17%;
+}
+
+.writerProfile-recomend-box {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.writerProfile-recomend-box a {
+    width: 20%;
+    background-color: #ffffff;
+    padding: 12px;
+}
+
+.writerProfile-recomend-box a:hover {
+    opacity: 0.9;
+}
+
+.writerProfile-recomend-box a h3 {
+    font-family: HiraginoSans-W4;
+	font-size: 16px;
+	text-align: center;
+	color: #828282;
+    margin-bottom: 15px;
+}
+
+.writerProfile-recomend-box a img {
+    width: 100px;
+	height: 100px;
+	border: solid 2px #979797;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.writerProfile-recomend-text {
+    font-family: HiraginoSans-W4;
+	font-size: 12px;
+	line-height: 1.7;
+	text-align: left;
+	color: #828282;
+    margin-bottom: 10px;
+}
+
+
+/*------ライターおすすめ欄-----------*/
+
+.writerProfile-fixBar {
+    background-color: #ffffff;
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 15px 0;
+    line-height: 2.7;
+    text-align: center;
+    opacity: 0.95;
+}
+
+.writerProfile-fixBar-text {
+    display: inline;
+    font-family: HiraginoSans-W4;
+	font-size: 16px;
+	text-align: left;
+	color: #4a4a4a;
+}
+
+.writerProfile-fixbar-btn {
+    display: inline;
+    width: 20%;
+	height: 35px;
+	border-radius: 5px;
+	border: 1px solid #44a5cb;
+    color: #4a4a4a;
+    padding: 10px 30px;
+    margin-left: 30px;
+    font-family: HiraginoSans-W3;
+}
+
+/*-フッター固定した分の空要素--*/
+.footer-bk {
+    width: 100%;
+    height: 80px;
+}
+
+
+
+
+
+/*
+■-■-■-■-■-■-■-■-■-■-■-■-■-■-■-■-■-
+シゴト依頼ページ
+■-■-■-■-■-■-■-■-■-■-■-■-■-■-■-■-■-■-
+*/
+
+.jobRequest-img {
+    height: 185px;
+    width: 100%;
+    background: url(../img/page-request/diagonal_striped_brick.png) ;
+}
+
+.jobRequest-img h1 {
+	font-size: 24px;
+    font-family: HiraginoSans-W6;
+	text-align: center;
+	color: #5e5e5f;
+    padding-top: 80px;
+}
+
+.jobRequest-body {
+    padding: 40px 70px;
+    overflow: hidden; /*floatの親要素に入れる*/
+    max-width: 1000px;  /*幅の最大値を指定し、広げすぎない*/
+    margin: 0 auto;    /*全体の中央配置*/
+}
+
+.jobRequest-body section {
+    margin-bottom: 50px;
+}
+
+.jobRequest-body h2 {
+    border-left: 10px solid #d8d8d8;
+    padding-left: 20px;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 8px;
+    margin-bottom: 25px;
+    font-family: HiraginoSans-W6;
+	font-size: 18px;
+	text-align: left;
+	color: #4a4a4a;
+    line-height: 2;
+
+}
+
+
+/*---STEP1 ----------------*/
+
+.jobRequest_step1-2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+/*チェックボックスの仕様*/
+.jobRequest_step1_item input{
+  display: none;
+}
+.jobRequest_step1_item label{
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    font-family: HiraginoSans-W6;
+	font-size: 13px;
+	color: #828282;
+    background-color: #ffffff;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.jobRequest_step1_item label:hover {
+    background-color: #40bfb0;
+    color: #ffffff;
+}
+
+.jobRequest_step1-input:checked+
+.jobRequest_step1-label {
+    background-color: #40bfb0;
+    color: #ffffff;
+}
+
+
+/*---STEP2 ----------------*/
+
+/*チェックボックスの仕様*/
+.jobRequest_step2_item input {
+    display: none;
+}
+.jobRequest_step2_item label {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: HiraginoSans-W6;
+	font-size: 12px;
+	color: #828282;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+}
+
+.jobRequest_step2_item label:hover {
+    background-color: #40bfb0;
+    color: #ffffff;
+}
+
+.jobRequest_step2-input:checked+
+.jobRequest_step2-label {
+    background-color: #40bfb0;
+    color: #ffffff;
+}
+
+
+/*---STEP3 ----------------*/
+
+.jobRequest_step3-4 {
+    border-radius: 3px;
+	background-color: #ffffff;
+    padding: 30px 30px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.jobRequest_step3-4 section {
+    overflow: hidden; /*floatの親要素に入れる*/
+}
+
+.jobRequest_step3-4 h3 {
+    font-family: HiraginoSans-W3;
+	font-size: 14px;
+	text-align: left;
+	color: #4a4a4a;
+}
+
+.jobRequest-mustTag {
+    margin-left: 60px;
+    width: 50px;
+    height: 25px;
+    border-radius: 3px;
+    background-color: #da6272;
+    text-align: center;
+    color: #ffffff;
+}
+
+.jobRequest_step3-4 input {
+    margin-left: 60px;
+}
