@@ -24,10 +24,10 @@
             <ul class="nav-container-right">
                 <li><a href="request.html" class="nav-request-btn">シゴトを依頼</a></li>
                 <li class="tac nav-icon-text">
-                    <a href=""><img src="img/header/comments.png" alt="message" class="nav-icon"><br><span>メッセージ</span></a>
+                    <a href="mypage-message.html"><img src="img/header/comments.png" alt="message" class="nav-icon"><br><span>メッセージ</span></a>
                 </li>
                 <li class="tac nav-icon-text">
-                    <a href=""><img src="img/header/user.png" alt="message" class="nav-icon"><br><span>マイページ</span></a>
+                    <a href="mypage-top.html"><img src="img/header/user.png" alt="message" class="nav-icon"><br><span>マイページ</span></a>
                 </li>
             </ul>
         </nav>
@@ -173,31 +173,160 @@
         <section>
             <h2>STEP 3. シゴトの詳細</h2>
             <div class="jobRequest_step3-4">
-                <table>
-                    <tr>
-                        <td><h3>依頼タイトル</h3></td>
-                        <td><p class="jobRequest-mustTag">必須</p></td>
-                        <td><input type="text" maxlength="80" size="95%" placeholder="【急募】09/21まで！アメリカの国立公園の取材記事 1記事5000円〜"></td>
-                    </tr>
-                </table>
+                <section>
+                    <h3>依頼タイトル</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="80" placeholder="【急募】09/21まで！アメリカの国立公園の取材記事 1記事5000円〜">
+                </section>
+                <section>
+                    <h3>記事テーマ</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="80" placeholder="必見！アメリカで訪れるべき国立公園10選まとめ">
+                </section>
+                <section>
+                    <h3>依頼詳細</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <textarea name="job-detail" rows="25" placeholder="＜新規ライターの場合＞
+御覧いただきありがとうございます。
+
+本案件では、マルタの治安に関して、以下の構成・内容でご執筆をお願いいたします。
+
+---------------------------------------------------|
+■マルタの治安概要に関して解説(300字前後)
+マルタの治安について概要を解説してください。
+
+・一般的なマルタ全般の治安状況
+・治安の良し悪しに地域差がある場合は、それについても言及していただければと思います。
+
+外務省などが提供しているデータを引用するのもOKです。（URLを明示してください）
+
+■マルタでよくある犯罪・トラブル事例(400字〜)
+マルタでよく起こる犯罪やトラブルについて、3つ以上解説してください。
+
+■マルタで気をつけるべきポイント・対処法(700字〜)
+マルタを安全に過ごし自分の身を守るため、気をつけるべきポイントについて5つ以上解説してください。
+
+■マルタで安全な都市・地域
+マルタで留学、長期滞在するにあたって
+安全・オススメな都市、地域があれば解説していただけますと幸いです。
+
+----------------------------------------------------|
+
+必ず執筆者さま個人の体験や感想、マルタ滞在時の具体的なエピソードも交えて執筆してください。
+
+また執筆者さまにマルタでの滞在経験があれば、それに滞在した地域・エリア、滞在期間、目的など、簡単なプロフィールを教えていただけますと幸いです。
+
+【納品方法】
+・記事の納品はwordファイルか、テキストファイルでお願いします。
+・画像 ... jpg、pngで幅1200×高さ700px以上でお願いします。
+・1記事あたりに、現地で撮影された写真を最低でも3枚以上入れてください。
+
+【執筆に際して】
+・文字数は1記事2000字前後でお願いします。
+・記事の納品はwordファイルか、テキストファイルでお願いします。
+・できる限り記事に自分の考えや経験談を交えてください。
+
+・記事はタイトルをつけてください。
+・要素ごとに「中見出し」で区分けしてください。
+・要素のテキスト量が多くなる場合は「小見出し」を付けてください。
+
+ご不明点やご意見などありましたら、いつでもご連絡いただければと思います。記事内容や構成に関しても、随時ご相談いただければと思います。何卒よろしくお願いいたします。"></textarea>
+                </section>
+                <section>
+                    <h3>対象読者</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="80" placeholder="アメリカ旅行をする予定者。これからアメリカに留学する予定の人">
+                </section>
+                <section>
+                    <h3>依頼する背景/理由</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <textarea name="job-detail" rows="5" placeholder=""></textarea>
+                </section>
+                <section>
+                    <h3>求めるライター像</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <textarea name="job-detail" rows="5" placeholder="アメリカ滞在経験あり。旅行者の目線で記事を書くことができる。"></textarea>
+                </section>
+                <section>
+                    <h3>記事本数</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="10" class="small-input">
+                    <span class="small-input-text">本</span>
+                </section>
+                <section>
+                    <h3>1記事辺りの文字数</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="10" class="small-input">
+                    <span class="small-input-text">文字</span>
+                    <span class="small-input-text">〜</span>
+                    <input type="text" maxlength="10" class="small-input">
+                    <span class="small-input-text">文字</span>
+                </section>
+                <section>
+                    <h3>記事単価</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="10" class="small-input">
+                    <span class="small-input-text">円</span>
+                </section>
+                <section>
+                    <h3>応募期限</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="10" class="small-input" placeholder="YY/MM/DD">
+                </section>
+                <section>
+                    <h3>募集人数</h3>
+                    <p class="jobRequest-mustTag">必須</p>
+                    <input type="text" maxlength="10" class="small-input">
+                    <span class="small-input-text">人</span>
+                </section>
             </div>
         </section>
         <section>
             <h2>STEP 4. その他任意の項目</h2>
-            <div>
-                <table class="jobRequest_step3-4">
-
-                </table>
-
-
+            <div class="jobRequest_step3-4">
                 <section>
                     <h3>参考URL</h3>
-                    <p >任意</p>
-                    <input type="text">
+                    <p class="jobRequest-wantTag">任意</p>
+                    <input type="text" maxlength="80" placeholder="">
+                </section>
+                <section>
+                    <h3>添付ファイル</h3>
+                    <p class="jobRequest-wantTag">任意</p>
+                    <input type="text" maxlength="10" class="small-input" placeholder="ファイルを選択">
+                </section>
+                <section>
+                    <h3>希望納品日</h3>
+                    <p class="jobRequest-wantTag">任意</p>
+                    <input type="text" maxlength="10" class="small-input" placeholder="YY/MM/DD">
+                </section>
+                <section>
+                    <h3>希望納品画像枚数</h3>
+                    <p class="jobRequest-wantTag">任意</p>
+                    <input type="text" maxlength="10" class="small-input">
+                    <span class="small-input-text">枚</span>
+                    <span class="small-input-text">〜</span>
+                    <input type="text" maxlength="10" class="small-input">
+                    <span class="small-input-text">枚</span>
+                </section>
+                <section>
+                    <h3>希望する語調</h3>
+                    <p class="jobRequest-wantTag">任意</p>
+                    <input type="text" maxlength="10" class="small-input" placeholder="です・ます">
+                    <input type="text" maxlength="10" class="small-input" placeholder="だ・である">
+                </section>
+                <section>
+                    <h3>注意・禁止事項</h3>
+                    <p class="jobRequest-wantTag">任意</p>
+                    <textarea name="job-detail" rows="5" placeholder=""></textarea>
+                </section>
+                <section>
+                    <h3>一言コメント</h3>
+                    <p class="jobRequest-wantTag">任意</p>
+                    <textarea name="job-detail" rows="5" placeholder="これだけは言いたい！"></textarea>
                 </section>
             </div>
         </section>
-        <a href="">上記内容を確認して進む（一時保存）</a>
+        <a href="mypage-top.html" class="jobRequest-final-btn">上記内容を確認して進む（一時保存）</a>
     </section>
     <footer>
         <div class="footer-main">
@@ -212,7 +341,7 @@
                     <li><a href="">分かる！ライティングマガジン</a></li>
                 </ul>
                 <ul>
-                    <li><a href="">マイページ（法人）</a></li>
+                    <li><a href="mypage-top.html">マイページ（法人）</a></li>
                     <li><a href="">マイページ（ライター）</a></li>
                     <li><a href="">ライターとして登録する</a></li>
                     <li><a href="request.html">シゴトを依頼する</a></li>
