@@ -36,6 +36,9 @@ a:hover{
     margin-right: 10px;
 }
 
+.ml5 {
+    margin-left: 5px;
+}
 .ml10 {
     margin-left: 10px;
 }
@@ -57,6 +60,23 @@ a:hover{
     padding: 5px 90px;
     font-size: 10px;
     color: #4a4a4a;
+}
+
+.smthScroll {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    text-align: center;
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #000000;
+    border-radius: 50%;
+    padding: 13px 5px 13px 5px;
+}
+
+.smthScroll:hover {
+    color: #ffffff;
+    opacity: 0.9;
 }
 
 
@@ -918,7 +938,7 @@ footer .end-copy{
     font-family: HiraginoSans-W6;
 	text-align: center;
 	color: #ffffff;
-    padding-top: 80px;
+    padding-top: 65px;
 }
 
 .writerList-body {
@@ -1690,7 +1710,7 @@ footer .end-copy{
     font-family: HiraginoSans-W6;
 	text-align: center;
 	color: #5e5e5f;
-    padding-top: 80px;
+    padding-top: 65px;
 }
 
 .jobRequest-body {

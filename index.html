@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="dist/type.css">
 </head>
 <body>
     <div class="loader">
@@ -38,13 +39,13 @@
             </ul>
         </nav>
     </header>
-    <div class="header-bk">
+    <div class="header-bk" id="smthScroll-top">
     </div>
     <section class="top-img">
         <video src="img/video/commpo_1.mov" autoplay poster="posterimage.jpg" muted autoplay loop class="top-video">
         </video>
-        <h2>コンテンツをもっとクールに、もっとクリエイティブに</h2>
-        <p class="sub-title">- 書き手とメディアを繋げれる新しいプラットフォーム -</p>
+        <h2><span id="ityped-title"></span></h2>
+        <p class="sub-title"><span id="ityped-subtitle"></span></p>
         <div class="top-img-btn">
             <p class="btn-apply">
                 <a href="#"><img src="img/page-top/top-img/writer_pen.png" alt="ライター" class="top-img-btn-icon">ライターとして働く</a>
@@ -482,13 +483,13 @@
             <a href="#" class="top-question-more-btn">
                 全ての質問を見る<i class="fas fa-chevron-circle-right more-btn-icon"></i>
             </a>
-            <span id="ityped" class="ityped"></span>
-        </section>
         </div>
+    </section>
     <div class="top-footer-userRegi-box">
         <a href="#" class="top-footer-aplly-btn"><img src="img/page-top/top-img/writer_pen.png" alt="">ライターとして登録してみる</a>
         <a href="request.html" class="top-footer-resuest-btn"><img src="img/page-top/top-img/work_hand-shake.png" alt="">シゴトを依頼してみる</a>
     </div>
+    <a href="index.html#smthScroll-top" class="smthScroll">TOP<i class="fas fa-angle-up ml5"></i></a>
     <footer>
         <div class="footer-main">
             <div class="footer_left">
@@ -526,5 +527,17 @@
     </footer>
     <!--jQuery の導入。先にコードを挿入する必要がある -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+    <!-- type-text  -->
+    <!-- メインキャッチコピー -->
+    <script src="dist/main-catch.js"></script>
+    <script>
+      ityped.init("#ityped-title")
+    </script>
+    <!-- サブキャッチコピー -->
+    <script src="dist/sub-catch.js"></script>
+    <script>
+      ityped.init("#ityped-subtitle")
+    </script>
 </body>
 </html>

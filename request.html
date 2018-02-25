@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="dist/type.css">
 </head>
 <body>
     <header>
@@ -39,7 +40,7 @@
         <a href="request.html">ライターにシゴトを依頼しよう！（3分）</a>
     </div>
     <section class="jobRequest-img">
-        <h1>ライターにシゴトを依頼しよう！（3分）</h1>
+        <h1><span id="jobRequest-title"></span></h1>
     </section>
     <section class="jobRequest-body">
         <section>
@@ -364,5 +365,12 @@
             <p>サイト内の文章、画像等の著作物は株式会社Kakikakiに属します。文章・写真などの複製及び無断転載を禁じます。</p>
         </div>
     </footer>
+    <!--jQuery の導入。先にコードを挿入する必要がある -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- メインキャッチコピー -->
+    <script src="dist/jobRequest-catch.js"></script>
+    <script>
+      ityped.init("#jobRequest-title")
+    </script>
 </body>
 </html>

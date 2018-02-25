@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="dist/type.css">
 </head>
 <body>
     <header>
@@ -32,14 +33,14 @@
             </ul>
         </nav>
     </header>
-    <div class="header-bk">
+    <div class="header-bk" id="smthScroll-writerSearch">
     </div>
     <div class="pankuzu">
         <a href="index.html">TOP　></a>
         <a href="writer-list.html">ライターを探す</a>
     </div>
     <section class="writerList-img">
-        <h2>シゴトにぴったりなライターを探そう！</h2>
+        <h2><span id="writerSearch-title"></span></h2>
     </section>
     <div class="writerList-body">
         <!-- ----メインカラム-- -->
@@ -508,6 +509,7 @@
             <a href="" class="writerList-sideber-selectBtn">絞り込みで検索</a>
         </div>
     </div>
+    <a href="#smthScroll-writerSearch" class="smthScroll">TOP<i class="fas fa-angle-up ml5"></i></a>
     <footer>
         <div class="footer-main">
             <p class="footer-main-copy">Contents is King - コンテンツをもっとクールに、もっとクリエイティブに -</p>
@@ -544,5 +546,14 @@
             <p>サイト内の文章、画像等の著作物は株式会社Kakikakiに属します。文章・写真などの複製及び無断転載を禁じます。</p>
         </div>
     </footer>
+    <!--jQuery の導入。先にコードを挿入する必要がある -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+    <!-- type-text  -->
+    <!-- メインキャッチコピー -->
+    <script src="dist/writerSearch-catch.js"></script>
+    <script>
+      ityped.init("#writerSearch-title")
+    </script>
 </body>
 </html>
