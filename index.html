@@ -189,8 +189,8 @@
     </section>
     <section class="top-sec-back-categry">
         <h2 class="top-sec-h2">シゴトのカテゴリからライターを探す</h2>
-        <p class="top-sec-about">専門的なスキルを持つプロライターに、ライティング案件を依頼してみましょう。<br>要望に応じたコンテンツを制作してくれます。</p>
-        <div>
+        <p class="top-sec-about category-text">専門的なスキルを持つプロライターに、ライティング案件を依頼してみましょう。<br>要望に応じたコンテンツを制作してくれます。</p>
+        <div class="top-category-animation">
             <section>
                 <a href="writer-list.html">
                     <img src="img/page-top/category-icon/SEO_line-chart_black.png" alt="">
@@ -225,7 +225,7 @@
     </section>
     <section class="sec-non-back">
         <h2 class="top-sec-h2">記事ジャンルからライターを探す</h2>
-        <p class="top-sec-about">ライターには執筆にあたり、それぞれ得意な専門領域があります。<br>記事ジャンルに応じてライターを探してみましょう！</p>
+        <p class="top-sec-about top-janle-text">ライターには執筆にあたり、それぞれ得意な専門領域があります。<br>記事ジャンルに応じてライターを探してみましょう！</p>
         <div class="top-sec-janle-item">
             <section>
                 <a href="">
@@ -315,7 +315,7 @@
     </section>
     <section class="top-sec-back-newJob">
         <h2 class="top-sec-h2">新着のシゴト一覧</h2>
-        <div>
+        <div class="top-job-list-animation">
             <div class="job-box">
                 <div class="job-box-icatch">
                     <p>募集締切： 2018/03/30</p>
@@ -396,9 +396,11 @@
     </section>
     <section class="sec-non-back">
         <h2 class="top-sec-h2">About</h2>
-        <p class="top-sec-about about-explain">●●はライターとメディアのマッチングプラットフォームです。</p>
-        <p class="top-sec-about about-explain">専門的な知識を持つ経験の豊富なライターと、Webメディアを運営している<br>編集者やディレクターを繋げることに特化しています。</p>
-        <p class="top-sec-about">メディアは質の高いオリジナルコンテンツを安定して制作することができ、<br>ライターは自分のスキルに応じ、様々な高単価案件を探すことができます。</p>
+        <div class="top-about-text">
+            <p class="top-sec-about about-explain">●●はライターとメディアのマッチングプラットフォームです。</p>
+            <p class="top-sec-about about-explain">専門的な知識を持つ経験の豊富なライターと、Webメディアを運営している<br>編集者やディレクターを繋げることに特化しています。</p>
+            <p class="top-sec-about">メディアは質の高いオリジナルコンテンツを安定して制作することができ、<br>ライターは自分のスキルに応じ、様々な高単価案件を探すことができます。</p>
+        </div>
         <div class="about-merit">
             <section class="about-merit-box">
                 <p class="about-merit-title">Merit 1</p>
@@ -527,7 +529,12 @@
     </footer>
     <!--jQuery の導入。先にコードを挿入する必要がある -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- 全体で共通するJS-->
+    <script type="text/javascript" src="js/common.js"></script>
+    <!-- smoothscroll -->
     <script type="text/javascript" src="js/smoothscroll.js"></script>
+    <!-- parallax -->
+    <script src="js/parallax.min.js"></script>
     <!-- type-text  -->
     <!-- メインキャッチコピー -->
     <script src="dist/main-catch.js"></script>

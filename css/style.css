@@ -79,6 +79,44 @@ a:hover{
     opacity: 0.9;
 }
 
+/*--- JSでのアニメーション----*/
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.fade-in-up {
+    animation-name: fade-in-up;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+@keyframes fade-in {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-up {
+    0%{
+        opacity: 0;
+        transform: translate(0,80px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+
+
 
 /* Loading ---------------------*/
 .loader{
@@ -227,6 +265,7 @@ nav ul li {
     width: 100%;
     background-size: cover;
     opacity: 0.95;
+    background-attachment: fixed;
 }
 
 .top-img h2 {
@@ -408,6 +447,7 @@ nav ul li {
     flex-wrap: wrap;
     max-width: 1050px;  /*幅の最大値を指定し、広げすぎない*/
     margin: 0 auto;    /*全体の中央配置*/
+    opacity: 0; /*スクロールフェードのために非表示にする */
 }
 
 .top-writer-item {
@@ -500,6 +540,11 @@ nav ul li {
     background: url(../img/page-top/section-back/memphis-colorful.png) center  center repeat rgba(0,0,0,0.0);
     background-size: auto;
     padding: 40px 70px;
+    background-attachment: fixed;
+}
+
+.top-category-animation, .category-text {
+    opacity: 0; /*アニメーション*/
 }
 
 .top-sec-back-categry div {
@@ -548,9 +593,15 @@ nav ul li {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap; /*折返し*/
+    opacity: 0; /* フェードアニメーション*/
 
     max-width: 1050px;  /*幅の最大値を指定し、広げすぎない*/
     margin: 0 auto;    /*全体の中央配置*/
+}
+
+.top-janle-text {
+    opacity: 0; /* フェードアニメーション*/
+
 }
 
 .top-sec-janle-item section {
@@ -582,6 +633,11 @@ nav ul li {
     background: url(../img/page-top/section-back/vintage-leaves.png) center  center repeat;
     background-size: auto;
     padding: 40px 70px;
+    background-attachment: fixed;
+}
+
+.top-job-list-animation {
+    opacity: 0;
 }
 
 .job-box {
@@ -656,6 +712,10 @@ nav ul li {
 
 
 /*------About -------------- */
+.top-about-text {
+    opacity: 0; /*アニメーション*/
+}
+
 .about-explain {
     margin-bottom: 15px;
 }
@@ -664,6 +724,7 @@ nav ul li {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap; /*折返し*/
+    opacity: 0; /*アニメーション*/
 
     max-width: 1050px;  /*幅の最大値を指定し、広げすぎない*/
     margin: 0 auto;    /*全体の中央配置*/
@@ -717,6 +778,7 @@ nav ul li {
     background: url(../img/page-top/section-back/doodles.png) center  center repeat;
     background-size: auto;
     padding: 40px 70px;
+    background-attachment: fixed;
 }
 
 .top-jobFlow {
@@ -929,7 +991,8 @@ footer .end-copy{
 .writerList-img {
     height: 185px;
     width: 100%;
-    background: url(../img/page-writer-list/low-poly-texture.png) center  center no-repeat;
+    /*
+    background: url(../img/page-writer-list/low-poly-texture.png) center  center no-repeat; */
     background-size: cover;
 }
 
@@ -1331,6 +1394,7 @@ footer .end-copy{
     width: 100%;
     background: url(../img/page-writer-profile/pexels-photo-129441.jpeg) center  center no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     overflow: hidden; /*floatの親要素に入れる*/
 }
 
@@ -1703,6 +1767,7 @@ footer .end-copy{
     height: 185px;
     width: 100%;
     background: url(../img/page-request/diagonal_striped_brick.png) ;
+    background-attachment: fixed;
 }
 
 .jobRequest-img h1 {
@@ -1930,6 +1995,7 @@ footer .end-copy{
     width: 100%;
     background: url(../img/page-mypage/low-poly-texture-12.png) center  center no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     overflow: hidden; /*floatの親要素に入れる*/
 }
 
@@ -2280,6 +2346,7 @@ footer .end-copy{
     height: 270px;
     width: 100%;
     background: url(../img/page-top/section-back/memphis-colorful.png);
+    background-attachment: fixed;
     overflow: hidden; /*floatの親要素に入れる*/
 }
 
