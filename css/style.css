@@ -277,9 +277,6 @@ nav ul li {
     animation-iteration-count: 1;
     animation-direction: normal;
     animation-fill-mode: forwards;
-
-    position: relative;
-    z-index: 1;
 }
 
 @keyframes fade-in {
@@ -632,7 +629,6 @@ nav ul li {
 
 .top-janle-text {
     opacity: 0; /* フェードアニメーション*/
-
 }
 
 .top-sec-janle-item a:hover {
@@ -744,6 +740,7 @@ nav ul li {
 .more-btn-icon {
     margin-left: 10px;
 }
+
 
 
 /*------About -------------- */
