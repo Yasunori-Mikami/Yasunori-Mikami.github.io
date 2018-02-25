@@ -794,6 +794,11 @@ nav ul li {
     margin: 0 auto;    /*全体の中央配置*/
 }
 
+.top-jobFlow, .top-jobFlow-text {
+    opacity: 0; /*アニメーション*/
+}
+
+
 .top-jobFlow section {
     width: 155px;
     margin: 10px;
@@ -831,6 +836,10 @@ nav ul li {
 
     max-width: 900px;  /*幅の最大値を指定し、広げすぎない*/
     margin: 0 auto;    /*全体の中央配置*/
+}
+
+.top-question-box, .top-question-text {
+    opacity: 0; /*アニメーション*/
 }
 
 .top-question-item {

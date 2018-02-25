@@ -32,6 +32,16 @@ $(function(){
     //topページabout メリット詳細欄の高さ
     var aboutMeritContainer = $('.about-merit').offset().top;
 
+    //topページFLOW テキスト欄の高さ
+    var flowTextContainer = $('.top-jobFlow-text').offset().top;
+    //topページFLOW 詳細欄の高さ
+    var flowtItemContainer = $('.top-jobFlow').offset().top;
+
+    //topページFAQ テキスト欄の高さ
+    var faqTextContainer = $('.top-question-text').offset().top;
+    //topページFAQ 詳細欄の高さ
+    var faqItemContainer = $('.top-question-box').offset().top;
+
 
 
     //----------スクロールイベント-------------
@@ -78,6 +88,20 @@ $(function(){
         }
         if(dy >= aboutMeritContainer - windowHeight){
             $('.about-merit').addClass('fade-in-up');
+        }
+
+        if(dy >= flowTextContainer - windowHeight){
+            $('.top-jobFlow-text').addClass('fade-in-up');
+        }
+        if(dy >= flowtItemContainer - windowHeight){
+            $('.top-jobFlow').addClass('fade-in-up');
+        }
+
+        if(dy >= faqTextContainer - windowHeight){
+            $('.top-question-text').addClass('fade-in-up');
+        }
+        if(dy >= faqItemContainer - windowHeight){
+            $('.top-question-box').addClass('fade-in-up');
         }
 
     });
