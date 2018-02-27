@@ -9,7 +9,7 @@ $(function(){
     var windowHeight = $(window).height();
 
     //topページライター欄の高さ
-    var topWriterContainer = $('.top-writer-box').offset().top;
+    var topWriterContainer = $('.top-writer-box-animation').offset().top;
     //console.log('worksContainerTop: ' + worksContainerTop);
 
 
@@ -43,7 +43,6 @@ $(function(){
     var faqItemContainer = $('.top-question-box').offset().top;
 
 
-
     //----------スクロールイベント-------------
     $(window).on('scroll',function(){
         console.log('スクロールしている');//スクロールしている時だけ動作する
@@ -59,7 +58,7 @@ $(function(){
         //dyがtopWriter-container - windowの高さを引いた値になったら
         if(dy >= topWriterContainer - windowHeight){
             console.log('topWriter-containerだよ');
-            $('.top-writer-box').addClass('fade-in-up');
+            $('.top-writer-box-animation').addClass('fade-in-up');
         }
 
 
@@ -104,6 +103,23 @@ $(function(){
             $('.top-question-box').addClass('fade-in-up');
         }
 
+    });
+
+    /* レスポンシブ対応：ウィンドウサイズ  */
+    var windowWidth;
+
+    function resizeLoader(){
+    windowWidth = $(window).width();
+
+    if(windowWidth < 767){
+        console.log("aaa");
+        $('#top-writer').removeClass('top-writer-box-animation');}
+    }
+
+    resizeLoader();
+
+    $(window).resize(function() {
+        resizeLoader();
     });
 });
 
