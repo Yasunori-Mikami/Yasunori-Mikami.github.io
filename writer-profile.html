@@ -9,6 +9,8 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="dist/type.css">
+    <link rel="stylesheet" type="text/css" href="js-slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="js-slick/slick.css"/>
 </head>
 <body>
     <header>
@@ -404,6 +406,19 @@
     <div class="footer-bk"></div>
     <!--jQuery の導入。先にコードを挿入する必要がある -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <!-- スライダー -->
+    <script src="js-slick/slick.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).on('ready', function() {
+        $(".writerProfile-recomend-box").slick({
+          dots: true,
+          infinite: true,
+          centerMode: true,
+          slidesToShow: 5,
+          slidesToScroll: 3
+        });
+      });
+  </script>
     <!-- parallax -->
     <script src="js/parallax.min.js"></script>
 </body>
