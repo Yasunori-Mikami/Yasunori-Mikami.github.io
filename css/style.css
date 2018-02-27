@@ -1384,8 +1384,31 @@ footer .end-copy{
 }
 
 @media (max-width: 767px) {
+    .footer-main {
+        padding: 20px 20px;
+    }
 
-
+    .footer_left {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 30px 0 0px 0;
+    }
+    .footer-form {
+        float: left;
+        margin: 20px 0 20px 0%;
+    }
+    .footer-form input {
+        width: 100%;
+    }
+    .footer-form textarea {
+        width: 100%;
+    }
+    .footer-btn {
+        width: 100%;
+    }
+    footer .end-copy{
+        padding: 5px;
+    }
 }
 
 
