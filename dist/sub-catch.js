@@ -18,15 +18,15 @@
  */
 var setProps = function setProps(_ref) {
   var _ref$strings = _ref.strings,
-      strings = _ref$strings === undefined ? ['- 書き手とメディアを繋げれる新しいプラットフォーム -'] : _ref$strings,
+      strings = _ref$strings === undefined ? ['- 書き手とメディアの最適なマッチングを実現する -'] : _ref$strings,
       _ref$typeSpeed = _ref.typeSpeed,
       typeSpeed = _ref$typeSpeed === undefined ? 30 : _ref$typeSpeed,
       _ref$backSpeed = _ref.backSpeed,
       backSpeed = _ref$backSpeed === undefined ? 30 : _ref$backSpeed,
       _ref$backDelay = _ref.backDelay,
-      backDelay = _ref$backDelay === undefined ? 17000 : _ref$backDelay,
+      backDelay = _ref$backDelay === undefined ? 27000 : _ref$backDelay,
       _ref$startDelay = _ref.startDelay,
-      startDelay = _ref$startDelay === undefined ? 3700 : _ref$startDelay,
+      startDelay = _ref$startDelay === undefined ? 3000 : _ref$startDelay,
       _ref$cursorChar = _ref.cursorChar,
       cursorChar = _ref$cursorChar === undefined ? '　' : _ref$cursorChar,
       _ref$placeholder = _ref.placeholder,

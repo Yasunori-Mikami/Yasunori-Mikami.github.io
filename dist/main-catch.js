@@ -24,7 +24,7 @@ var setProps = function setProps(_ref) {
       _ref$backSpeed = _ref.backSpeed,
       backSpeed = _ref$backSpeed === undefined ? 40 : _ref$backSpeed,
       _ref$backDelay = _ref.backDelay,
-      backDelay = _ref$backDelay === undefined ? 20000 : _ref$backDelay,
+      backDelay = _ref$backDelay === undefined ? 28000 : _ref$backDelay,
       _ref$startDelay = _ref.startDelay,
       startDelay = _ref$startDelay === undefined ? 1800 : _ref$startDelay,
       _ref$cursorChar = _ref.cursorChar,
