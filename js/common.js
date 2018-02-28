@@ -121,6 +121,19 @@ $(function(){
     $(window).resize(function() {
         resizeLoader();
     });
+
+
+    //-----------Responsive navi（ハンバーガーメニュー）ーーーーーーー|
+    //開く
+    $('.header-humbergerMenu').on('click',function(){
+       console.log('ハンバーガー押されたよ');
+       $('.header-mobile-menu').addClass('mobile-menu-open').addClass('fade-in');
+    });
+    //閉じる
+    $('.header-humbergerMenu-close').on('click',function(){
+       $('.header-mobile-menu').removeClass('mobile-menu-open').removeClass('fade-in');
+    });
+
 });
 
 /*--------

@@ -95,7 +95,7 @@ a:hover{
 
 .fade-in-up {
     animation-name: fade-in-up;
-    animation-duration: 1s;
+    animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
@@ -113,7 +113,7 @@ a:hover{
 @keyframes fade-in-up {
     0%{
         opacity: 0;
-        transform: translate(0,80px);
+        transform: translate(0,50px);
     }
     100%{
         opacity: 1;
@@ -270,6 +270,9 @@ nav ul li {
     line-height: 1.3;
 }
 
+.header-mobile-menu {
+    display: none;
+}
 
 .header-humbergerMenu {
     display: none;
@@ -309,6 +312,7 @@ nav ul li {
         display: none;
     }
 
+    /*スマフォのメニュー*/
     .header-humbergerMenu {
         display: inline-block;
         font-size: 21px;
@@ -317,7 +321,43 @@ nav ul li {
         margin-right: 15px;
     }
 
+    .mobile-menu-open{  /* モバイルのメニューをCSSで設定し、JSで制御*/
+        display: block;
+        z-index: 200;
+    }
+
+    .header-mobile-container {
+        width: 100%;
+        height: 100vh; /* 端末の高さの最大値 */
+        background: rgba(255, 255, 255, 0.94);
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 10px 20px;
+    }
+
     .header-humbergerMenu-close {
+        display: block;
+        text-align: right;
+        margin-right: 40px;
+        margin-top: 15px;
+    }
+    .close-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .header-mobile-container ul {
+        margin-top: 10px;
+        text-align: center;
+    }
+    .header-mobile-container ul li {
+        margin-bottom: 25px;
+        border-bottom: 0.1px solid #000000;
+        margin-right: 45px;
+    }
+    .header-mobile-container ul a {
+        font-size: 16px;
     }
 }
 
@@ -464,7 +504,7 @@ nav ul li {
 }
 
 .top-img h2 {
-	font-size: 42px;
+	font-size: 38px;
     font-family: HiraginoSans-W6;
 	text-align: center;
 	color: #ffffff;
@@ -473,12 +513,12 @@ nav ul li {
     position: relative;
     top: -500px;
     z-index: 1;
-    -webkit-text-stroke: 0.2px #44a5cb;
+    text-shadow: 1px 1px 2px #999999;
 }
 
 
 .top-img .sub-title {
-    font-size: 20px;
+    font-size: 22px;
     font-family: HiraginoSans-W4;
     color: #ffffff;
     text-align: center;
@@ -486,7 +526,7 @@ nav ul li {
     position: relative;
     top: -500px;
     z-index: 1;
-    -webkit-text-stroke: 0.1px #44a5cb;
+    text-shadow: 1px 1px 2px #999999;
 }
 
 .top-img-btn {
@@ -509,11 +549,12 @@ nav ul li {
 
 /*--ライターとして働く--*/
 .btn-apply {
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     background-color: #da6272;
     padding: 10px 20px;
-    width: 170px;
+    width: 180px;
+    text-align: center;
 }
 .btn-apply a{
     color: #ffffff;
@@ -522,24 +563,33 @@ nav ul li {
     opacity: 0.9;
 }
 
+.top-img-btn-icon-w {
+    width: 15px;
+    height: 15px;
+    margin-right: 15px;
+}
+
+
 /*--シゴトを依頼する--*/
 .btn-request {
-    font-size: 14px;
+    font-size: 16px;
     border-radius: 5px;
     background-color: #44a5cb;
     padding: 10px 20px;
-    width: 170px;
+    width: 180px;
+    text-align: center;
 }
 .btn-request a{
     color: #ffffff;
+    vertical-align: middle;
 }
 .btn-request:hover {
     opacity: 0.9;
 }
 
-.top-img-btn-icon {
-    width: 13px;
-    height: 13px;
+.top-img-btn-icon-job {
+    width: 22px;
+    height: 22px;
     margin-right: 15px;
 }
 
@@ -551,9 +601,9 @@ nav ul li {
 
     .top-img h2 {
         display: block;
-    	font-size: 15px;
+    	font-size: 16px;
         line-height: 1.2;
-        letter-spacing: 0.7px;
+        letter-spacing: 0.6px;
         top: -140px;
         padding: 3px 2px;
         text-align: center;
@@ -563,7 +613,8 @@ nav ul li {
         font-size: 12px;
         top: -170px;
         text-align: center;
-        padding: 10px 15px;
+        padding: 10px 5px;
+        margin-left: 15px;
     }
 
     .top-img-btn {
@@ -699,7 +750,7 @@ nav ul li {
         padding: 25px 15px;
     }
     .top-sec-h2 {
-        font-size: 16px;
+        font-size: 18px;
         margin-bottom: 20px;
     }
     .top-sec-about {
@@ -884,7 +935,9 @@ nav ul li {
     .top-sec-back-categry {
         padding: 25px 20px;
     }
-
+    .top-sec-back-categry h3 {
+        font-size: 13px;
+    }
     .top-sec-back-categry div {
         justify-content: flex-start;
         max-width: 100%;
@@ -1035,7 +1088,7 @@ nav ul li {
 
 .more-btn {
     font-family: HiraginoSans-W5;
-    font-size: 12px;
+    font-size: 14px;
     text-align: right;
     margin-right: 80px;
     color: #4a4a4a;
@@ -1062,10 +1115,13 @@ nav ul li {
     }
     .job-box-info {
         margin-left: 0px;
+        text-align: center;
     }
     .job-box-info h3{
     	width: 100%;
         margin-bottom: 10px;
+        font-size: 16px;
+        text-align: center;
     }
     .job-box-info-status {
         margin-top: 10px;
@@ -1345,7 +1401,7 @@ nav ul li {
     overflow: hidden; /*floatの親要素に入れる*/
 }
 .footer-main-copy {
-    font-size: 16px;
+    font-size: 22px;
     text-align: center;
     color: #fffefe;
 }
@@ -1417,6 +1473,9 @@ footer .end-copy{
     .footer-main {
         padding: 20px 20px;
     }
+    .footer-main-copy {
+        font-size: 16px;
+    }
 
     .footer_left {
         width: 100%;
@@ -1459,7 +1518,7 @@ footer .end-copy{
 }
 
 .writerList-img h2 {
-	font-size: 24px;
+	font-size: 32px;
     font-family: HiraginoSans-W6;
 	text-align: center;
 	color: #ffffff;
@@ -1487,7 +1546,7 @@ footer .end-copy{
 }
 
 .writerList-sideber h3{
-    font-size: 16px;
+    font-size: 20px;
     font-family: HiraginoSans-W5;
 	text-align: left;
 	color: #4a4a4a;
@@ -1597,7 +1656,7 @@ footer .end-copy{
 
 /*Search- ライターエリア ----*/
 .search-writer-area {
-    margin-left: 110px;
+    margin-left: 100px;
     font-size: 12px;
 	text-align: left;
 	color: #737375;
@@ -1652,10 +1711,6 @@ footer .end-copy{
 }
 
 .writerList-main-column .search-option-item {
-    margin-right: 10px;
-    border-radius: 5px;
-    background-color: #ffffff;
-    color: #737375;
 }
 
 /*チェックボックスの仕様*/
@@ -1665,19 +1720,24 @@ footer .end-copy{
 .search-option-item label{
      cursor: pointer;
      padding: 12px 40px;
+     margin-right: 10px;
      border-radius: 5px;
      text-align: center;
-     font-size: 14px;
+     font-size: 15px;
      line-height: 3;
+     background-color: #ffffff;
+     color: #737375;
 }
 .search-option-item .radio_box:checked + .search-option-label {
     background-color: #4a4a4a;
     color: #ffffff;
+    border-radius: 5px;
 }
 
-.writerList-main-column .search-option-item:hover {
+.writerList-main-column .search-option-item label:hover {
 	background-color: #4a4a4a;
     color: #ffffff;
+    border-radius: 5px;
 }
 
 
@@ -1885,7 +1945,7 @@ footer .end-copy{
 
 .writerProfile-top h1 {
     font-family: HiraginoSans-W5;
-	font-size: 24px;
+	font-size: 26px;
 	text-align: left;
 	color: #4a4a4a;
     margin-bottom: 20px;
@@ -1893,7 +1953,7 @@ footer .end-copy{
 
 .writerProfile-top-catch {
     font-family: HiraginoSans-W4;
-	font-size: 16px;
+	font-size: 17px;
 	line-height: 1.7;
 	text-align: left;
     color: #4a4a4a;
@@ -1942,7 +2002,7 @@ footer .end-copy{
 
 .writerProfile-body h2 {
     font-family: HiraginoSans-W5;
-	font-size: 18px;
+	font-size: 22px;
 	text-align: left;
 	color: #4a4a4a;
     margin-bottom: 20px;
@@ -2125,7 +2185,7 @@ footer .end-copy{
 
 .writerProfile-recomend h2 {
     font-family: HiraginoSans-W5;
-	font-size: 18px;
+	font-size: 22px;
 	text-align: left;
 	color: #4a4a4a;
     margin-bottom: 20px;
@@ -2233,7 +2293,7 @@ footer .end-copy{
 }
 
 .jobRequest-img h1 {
-	font-size: 24px;
+	font-size: 32px;
     font-family: HiraginoSans-W6;
 	text-align: center;
 	color: #5e5e5f;
@@ -2248,7 +2308,7 @@ footer .end-copy{
 }
 
 .jobRequest-body section {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .jobRequest-body h2 {
@@ -2258,7 +2318,7 @@ footer .end-copy{
     padding-bottom: 8px;
     margin-bottom: 25px;
     font-family: HiraginoSans-W6;
-	font-size: 18px;
+	font-size: 20px;
 	text-align: left;
 	color: #4a4a4a;
     line-height: 2;
@@ -2347,7 +2407,7 @@ footer .end-copy{
     border-radius: 3px;
 	background-color: #ffffff;
     padding: 30px 30px;
-    width: 85%;
+    width: 91%;
     margin: 0 auto;
 }
 
