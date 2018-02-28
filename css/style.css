@@ -464,13 +464,12 @@ nav ul li {
 }
 
 .top-img h2 {
-	font-size: 28px;
+	font-size: 42px;
     font-family: HiraginoSans-W6;
 	text-align: center;
 	color: #ffffff;
     padding-top: 130px;
     letter-spacing: 5px;
-
     position: relative;
     top: -500px;
     z-index: 1;
@@ -483,7 +482,7 @@ nav ul li {
     font-family: HiraginoSans-W4;
     color: #ffffff;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 20px;
     position: relative;
     top: -500px;
     z-index: 1;
@@ -491,11 +490,10 @@ nav ul li {
 }
 
 .top-img-btn {
-    width: 450px;
+    width: 510px;
     padding-top: 100px;
-    text-align: center;
     display: flex;
-    justify-content: space-between; /*均等配置*/
+    justify-content: space-between;; /*均等配置*/
     margin: 0 auto;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
     position: relative;
     top: -500px;
@@ -553,7 +551,7 @@ nav ul li {
 
     .top-img h2 {
         display: block;
-    	font-size: 13px;
+    	font-size: 15px;
         line-height: 1.2;
         letter-spacing: 0.7px;
         top: -140px;
@@ -680,7 +678,7 @@ nav ul li {
 }
 
 .top-sec-h2 {
-    font-size: 20px;
+    font-size: 24px;
     font-family: HiraginoSans-W6;
     font-weight: bold;
     text-align: center;
@@ -690,7 +688,7 @@ nav ul li {
 
 .top-sec-about {
     font-family: HiraginoSans-W3;
-	font-size: 14px;
+	font-size: 15px;
 	text-align: center;
 	color: #4a4a4a;
     margin-bottom: 40px;
@@ -758,7 +756,7 @@ nav ul li {
 
 .top-writer-item h3 {
     font-family: HiraginoSans-W5;
-	font-size: 13px;
+	font-size: 16px;
 	line-height: 1.7;
 	color: #6a6868;
 }
@@ -859,8 +857,13 @@ nav ul li {
     color: #828282;
 }
 
+.top-sec-back-categry h3 {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
 .top-sec-back-categry section a img {
-    width: 35px;
+    width: 30px;
 }
 
 .top-sec-back-categry section:hover {
@@ -1010,7 +1013,7 @@ nav ul li {
 .job-box-info h3{
 	width: 440px;
 	font-family: HiraginoSans-W5;
-	font-size: 15px;
+	font-size: 17px;
 	line-height: 1.7;
 	text-align: left;
 	color: #4a4a4a;
@@ -1120,7 +1123,7 @@ nav ul li {
 
 .about-merit-box h3 {
     font-family: HiraginoSans-W6;
-    font-size: 14px;
+    font-size: 17px;
     color: #828282;
     margin-bottom: 15px;
     text-align: left;
@@ -1173,17 +1176,17 @@ nav ul li {
 
 
 .top-jobFlow section {
-    width: 155px;
+    width: 180px;
     margin: 10px;
     text-align: center;
 }
 
 .top-jobFlow section h3 {
     font-family: HiraginoSans-W6;
-    font-size: 14px;
+    font-size: 17px;
     color: #40bfb0;
     margin-bottom: 15px;
-    text-align: left;
+    text-align: center;
 }
 
 .top-jobFlow section img {
@@ -1242,7 +1245,7 @@ nav ul li {
 }
 
 .top-question-item h3 {
-    font-size: 14px;
+    font-size: 17px;
     text-align: left;
     color: #4a90e2;
     margin-bottom: 15px;

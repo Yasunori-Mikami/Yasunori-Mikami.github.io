@@ -18,13 +18,13 @@
  */
 var setProps = function setProps(_ref) {
   var _ref$strings = _ref.strings,
-      strings = _ref$strings === undefined ? ['コンテンツをもっとクールに、もっとクリエイティブに'] : _ref$strings,
+      strings = _ref$strings === undefined ? ['コンテンツ制作をもっとクリエイティブに'] : _ref$strings,
       _ref$typeSpeed = _ref.typeSpeed,
-      typeSpeed = _ref$typeSpeed === undefined ? 50 : _ref$typeSpeed,
+      typeSpeed = _ref$typeSpeed === undefined ? 40 : _ref$typeSpeed,
       _ref$backSpeed = _ref.backSpeed,
-      backSpeed = _ref$backSpeed === undefined ? 50 : _ref$backSpeed,
+      backSpeed = _ref$backSpeed === undefined ? 40 : _ref$backSpeed,
       _ref$backDelay = _ref.backDelay,
-      backDelay = _ref$backDelay === undefined ? 13500 : _ref$backDelay,
+      backDelay = _ref$backDelay === undefined ? 20000 : _ref$backDelay,
       _ref$startDelay = _ref.startDelay,
       startDelay = _ref$startDelay === undefined ? 1800 : _ref$startDelay,
       _ref$cursorChar = _ref.cursorChar,
