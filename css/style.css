@@ -2080,7 +2080,7 @@ footer .end-copy{
     margin-top: 2.5%;
     border-top: 3px dashed #ffffff;
     border-bottom: 3px dashed #ffffff;
-    padding: 1% 2% 12%;
+    padding: 1% 2% 13.5%;
     border-radius: 5px;
 }
 
@@ -2116,7 +2116,7 @@ footer .end-copy{
 }
 
 .writerProfile-body section {
-    margin-bottom: 70px;
+    margin-bottom: 100px;
 }
 
 .writerProfile-body h2 {
@@ -2665,13 +2665,18 @@ footer .end-copy{
     overflow: hidden; /*floatの親要素に入れる*/
 }
 
+.maypage-top-inner {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
 .mypage-top-left {
     float: left;
 }
 
 .mypage-top-left h1 {
     font-family: HiraginoSans-W5;
-	font-size: 24px;
+	font-size: 28px;
 	text-align: left;
 	color: #5e5e5f;
     margin-bottom: 5%;
@@ -2685,6 +2690,10 @@ footer .end-copy{
     margin-bottom: 25px;
 }
 
+.mypage-top-good p span {
+    font-size: 21px;
+}
+
 .mypage-top-status {
     overflow: hidden; /*floatの親要素に入れる*/
     width: 80%;
@@ -2694,7 +2703,7 @@ footer .end-copy{
     float: left;
     background-color: #fffefe;
     font-family: HiraginoSans-W4;
-	font-size: 14px;
+	font-size: 15px;
 	color: #5e5e5f;
     margin-right: 10px;
     margin-bottom: 10px;
@@ -2722,11 +2731,11 @@ footer .end-copy{
     border-radius: 5px;
 	background-color: #6a7a9c;
     font-family: HiraginoSans-W4;
-	font-size: 12px;
+	font-size: 14px;
 	text-align: center;
 	color: #ffffff;
     display: block;
-    padding: 5px;
+    padding: 6px 10px;
     margin-top: 15px;
 }
 
@@ -2736,7 +2745,7 @@ footer .end-copy{
     margin-left: 80px;
     text-align: right;
     color: #4a4a4a;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -2744,6 +2753,8 @@ footer .end-copy{
 .mypage-body {
     padding: 50px 140px;
     overflow: hidden; /*floatの親要素に入れる*/
+    margin: 0 auto;
+    max-width: 1050px;
 }
 
 .myMenu {
@@ -2789,7 +2800,7 @@ footer .end-copy{
 
 .mypage-mainColumn h2 {
     font-family: HiraginoSans-W5;
-	font-size: 16px;
+	font-size: 22px;
 	text-align: left;
 	color: #4a4a4a;
     margin-bottom: 25px;
@@ -2808,11 +2819,11 @@ footer .end-copy{
 .mypage-massage-time {
     float: left;
     font-family: HiraginoSans-W4;
-	font-size: 13px;
+	font-size: 14px;
 	text-align: left;
 	color: #5e5e5f;
-    margin-right: 25px;
-    line-height: 4;
+    margin-right: 20px;
+    padding-top: 4%;
 }
 
 .mypage-massage-tag {
@@ -2823,27 +2834,27 @@ footer .end-copy{
     color: #f8f8fb;
     text-align: center;
     font-size: 12px;
-    margin-right: 25px;
-    margin-top: 10px;
-
+    margin-right: 15px;
+    margin-top: 3.5%;
 }
 
 .mypage-massageItem h3 {
     float: left;
     font-family: HiraginoSans-W4;
-	font-size: 13px;
+	font-size: 14px;
 	text-align: left;
 	color: #5e5e5f;
-    margin-right: 25px;
-    margin-right: 25px;
-    line-height: 4;
+    margin-right: 20px;
+    padding-top: 3.5%;
+    line-height: 1.7;
     width: 140px;
     text-align: center;
+
 }
 
 .mypage-massage-text {
     font-family: HiraginoSans-W3;
-	font-size: 11px;
+	font-size: 13px;
 	line-height: 1.7;
 	text-align: left;
 	color: #5e5e5f;
@@ -2867,10 +2878,10 @@ footer .end-copy{
 .mypage-jobItem h3 {
     float: left;
     font-family: HiraginoSans-W4;
-	font-size: 13px;
+	font-size: 14px;
 	text-align: left;
 	color: #5e5e5f;
-    margin-right: 20px;
+    margin-right: 15px;
     margin-top: 5px;
     line-height: 1.7;
     width: 200px;
@@ -2880,9 +2891,9 @@ footer .end-copy{
 .mypage-jobItem .name {
     float: left;
     font-family: HiraginoSans-W4;
-	font-size: 13px;
+	font-size: 14px;
 	color: #5e5e5f;
-    margin-right: 20px;
+    margin-right: 15px;
     line-height: 4;
     width: 140px;
     text-align: center;
@@ -2891,11 +2902,24 @@ footer .end-copy{
 .mypage-jobItem .time {
     float: left;
     font-family: HiraginoSans-W3;
-    font-size: 11px;
+    font-size: 12.5px;
 	color: #5e5e5f;
-    line-height: 4;
-    width: 170px;
+    line-height: 1.7;
+    margin-top: 2.5%;
+    width: 30%;
     text-align: center;
+}
+
+.mypage-job-tag {
+    float: left;
+    border-radius: 3px;
+	background-color: #da6272;
+    padding: 5px 10px;
+    color: #f8f8fb;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 15px;
+    margin-top: 2%;
 }
 
 
@@ -2931,13 +2955,26 @@ footer .end-copy{
     float: left;
 }
 
+.mypage-writer-item-left .writerList-tag-box {
+    margin-top: 15px;
+}
+
 .mypage-writer-info{
     margin-left: 30px;
     float: left;
     text-align: left;
     width: 75%;
     margin-bottom: 10px;
+}
 
+.mypage-writer-info .item-font {
+    margin-top: 3px;
+    font-size: 15px;
+    color: #6a6868;
+}
+
+.mypage-writer-info h3 {
+    font-size: 20px;
 }
 
 /*--吹き出し---*/
@@ -2950,7 +2987,8 @@ footer .end-copy{
     position: relative;
     display: inline-block;
     width: 90%;
-    margin-top: 15px;
+    margin-top: 10px;
+    font-size: 15spx;
 }
 
 .mypage-writer-comment:before{
@@ -2970,7 +3008,7 @@ footer .end-copy{
 /*-----依頼ボタン----*/
 .mypage-writer-item-right {
     float: right;
-    padding: 7% 0;
+    padding: 12% 0;
 }
 
 .mypage-requestBtn {
@@ -2992,7 +3030,7 @@ footer .end-copy{
 
 .mypage-profBtn {
     margin-top: 30px;
-    background-color: #40bfb0;
+    background-color: #4a4a4a;
 }
 
 
