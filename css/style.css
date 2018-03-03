@@ -1470,7 +1470,7 @@ nav ul li {
 
 /*------footer -------------- */
 .footer-main {
-    padding: 40px 60px;
+    padding: 40px 160px;
     background-color: #4a4a4a;
     overflow: hidden; /*floatの親要素に入れる*/
 }
@@ -1626,7 +1626,7 @@ footer .end-copy{
 }
 
 .writerList-sideber h3{
-    font-size: 20px;
+    font-size: 22px;
     font-family: HiraginoSans-W5;
 	text-align: left;
 	color: #4a4a4a;
@@ -1652,7 +1652,7 @@ footer .end-copy{
     border: none;
     box-sizing: border-box;
     width: 250px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 #search-submit {
@@ -1675,7 +1675,7 @@ footer .end-copy{
     width: 80px;
 	height: 70px;
 	border-radius: 5px;
-    font-size: 12px;
+    font-size: 13px;
     font-family: HiraginoSans-W4;
     background-color: #ffffff;
     color: #737375;
@@ -1701,7 +1701,7 @@ footer .end-copy{
 .search-janle-item {
     width: 130px;
 	height: 30px;
-    font-size: 12px;
+    font-size: 13px;
     font-family: HiraginoSans-W4;
     background-color: #ffffff;
     color: #737375;
@@ -1724,7 +1724,7 @@ footer .end-copy{
 }
 .search-janle-item label{
   cursor: pointer;
-  padding: 17px;
+  padding: 5px 5px;
   border-radius: 5px;
 
 }
@@ -1736,8 +1736,8 @@ footer .end-copy{
 
 /*Search- ライターエリア ----*/
 .search-writer-area {
-    margin-left: 100px;
-    font-size: 12px;
+    margin-left: 70px;
+    font-size: 14px;
 	text-align: left;
 	color: #737375;
 }
@@ -1749,8 +1749,8 @@ footer .end-copy{
 }
 
 .writerList-sideber-cost form option {
-    padding: 10px;
-    font-size: 14px;
+    padding: 15px;
+    font-size: 16px;
     text-align: left;
     color: #737375;
 }
@@ -1803,7 +1803,7 @@ footer .end-copy{
      margin-right: 10px;
      border-radius: 5px;
      text-align: center;
-     font-size: 15px;
+     font-size: 16px;
      line-height: 3;
      background-color: #ffffff;
      color: #737375;
@@ -1828,7 +1828,7 @@ footer .end-copy{
 
 .search-result-number p {
     font-family: HiraginoSans-W5;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: left;
 	color: #4a4a4a;
     float: left;
@@ -1842,12 +1842,12 @@ footer .end-copy{
 }
 
 .search-result-number ul p {
-    width: 25px;
-	height: 25px;
+    width: 30px;
+	height: 30px;
 	background-color: #ffffff;
     border-radius: 50px;
     line-height: 2.4;
-    font-size: 10px;
+    font-size: 13px;
     color: #86868a;
     padding: 2px;
     margin-left: 10px;
@@ -1857,6 +1857,10 @@ footer .end-copy{
 .search-result-number ul .now-list {
     background: #6d6b6b;
     color: #ffffff;
+}
+
+.search-result-number .line-height {
+    line-height: 2.5;
 }
 
 /*検索結果一番下のページネーション*/
@@ -1906,7 +1910,7 @@ footer .end-copy{
 
 .writerList-writer-item h3 {
     font-family: HiraginoSans-W5;
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 1.7;
 	color: #6a6868;
     margin-bottom: 5px;
@@ -1919,31 +1923,36 @@ footer .end-copy{
 
 .writerList-info-grop-right{
     float: left;
-    font-size: 14px;
+    font-size: 15px;
 	color: #5e5e5f;
-    margin-left: 35px;
+    margin-left: 30px;
 }
 
 .writerList-info-grop-left {
     float: left;
-    font-size: 14px;
+    font-size: 15px;
 	color: #5e5e5f;
 }
 
+.writerList-info-grop .writer_history {
+    font-size: 15px;
+    float: left;
+    width: 163px;
+    color: #6a6868;
+}
 
 .writerList-writer-star {
-    font-size: 14px;
+    font-size: 16px;
 	text-align: left;
 	color: #5e5e5f;
-    margin-bottom: 5px;
-    float: left;
+    margin-bottom: 10px;
 }
 
 .writerList-tag-box {
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 40px;
     clear: both;
 }
 
@@ -1962,6 +1971,7 @@ footer .end-copy{
     display: inline-block;
     width: 94%;
     margin-top: 5px;
+    font-size: 16px;
 }
 
 .writerList-writer-comment:before{
