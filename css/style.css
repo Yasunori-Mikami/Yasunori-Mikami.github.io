@@ -572,13 +572,6 @@ nav ul li {
     opacity: 0.9;
 }
 
-.top-img-btn-icon-w {
-    width: 15px;
-    height: 15px;
-    margin-right: 15px;
-}
-
-
 /*--シゴトを依頼する--*/
 .btn-request {
     font-size: 16px;
@@ -596,11 +589,13 @@ nav ul li {
     opacity: 0.9;
 }
 
-.top-img-btn-icon-job {
-    width: 22px;
-    height: 22px;
-    margin-right: 15px;
+.top-img-btn-icon {
+    font-size: 18px;
+    margin-right: 12px;
 }
+
+
+
 @media (max-width: 1400px){
     .top-img {
         margin-bottom: 9%;
@@ -610,6 +605,9 @@ nav ul li {
 @media (max-width: 1000px){
     .top-img {
         margin-bottom: 5%;
+    }
+    .top-img-inner {
+        margin-top: -32%;
     }
     .top-img h2 {
         display: block;
@@ -632,7 +630,7 @@ nav ul li {
         display: flex;
         justify-content: space-between;; /*均等配置*/
         margin: 0 auto;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
-        padding-top: 5%;
+        padding-top: 6%;
         z-index: 1;
     }
     .btn-apply {
@@ -681,9 +679,9 @@ nav ul li {
     .top-img-btn_sp {
         display: block;
         overflow: hidden;
-        padding: 10px 15px;
+        padding: 15px 15px;
         text-align: center;
-        margin: 15px auto -10px;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
+        margin: 25px auto -10px;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
     }
     .top-img-btn_sp .btn-apply {
         display: block;
@@ -703,15 +701,8 @@ nav ul li {
     }
 
     .top-img-btn-icon {
-        margin-right: 5px;
-    }
-    .top-img-btn-icon-w {
-        width: 14px;
-        height: 14px;
-    }
-    .top-img-btn-icon-job {
-        width: 14px;
-        height: 14px;
+        font-size: 13px;
+        margin-right: 10px;
     }
 }
 
@@ -820,6 +811,7 @@ nav ul li {
     }
     .top-sec-about {
         margin-bottom: 20px;
+        font-size: 14px;
     }
 }
 
@@ -1025,6 +1017,10 @@ nav ul li {
     	width: 130px;
     	height: 130px;
         margin: 0 15px 15px;
+    }
+
+    .top-sec-back-categry section p {
+        margin-top: -10px;
     }
 
     .top-sec-back-categry section:hover {
@@ -1413,7 +1409,7 @@ nav ul li {
     }
 
     .top-question-item {
-        width: 40%;
+        width: 90%;
         margin:0 15px 30px;
     }
     .top-question-more-btn {
@@ -1555,7 +1551,12 @@ footer .end-copy{
     .footer-main-copy {
         font-size: 16px;
     }
-
+    .footer-main ul a {
+        font-size: 12px;
+    }
+    .footer-form h3 {
+        font-size: 14px;
+    }
     .footer_left {
         width: 100%;
         box-sizing: border-box;
