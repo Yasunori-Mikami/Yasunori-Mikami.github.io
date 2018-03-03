@@ -30,7 +30,7 @@ a:hover{
     border-radius: 5px;
     background-color: #f5c23c;
     display: inline;
-    padding: 3px 20px;
+    padding: 3px 15px;
     font-size: 12px;
     color: #ffffff;
     margin-right: 5px;
@@ -482,8 +482,7 @@ nav ul li {
 /* ------top-img -------------------------- */
 
 .top-img {
-    margin-bottom: -400px;
-
+    margin-bottom: 13%;
     /* 最初透明であとからふわっと現れるアニメーション*/
     opacity: 0; /*初期値の指定*/
     animation-name: fade-in;
@@ -511,16 +510,18 @@ nav ul li {
     background-attachment: fixed;
 }
 
+.top-img-inner {
+    position: relative;
+    margin-top: -28%;
+}
+
 .top-img h2 {
 	font-size: 42px;
     font-family: HiraginoSans-W6;
 	text-align: center;
 	color: #ffffff;
-    padding-top: 130px;
     letter-spacing: 5px;
-    position: relative;
-    top: -500px;
-    z-index: 1;
+    z-insdex: 1;
     text-shadow: 1px 1px 2px #999999;
 }
 
@@ -530,21 +531,17 @@ nav ul li {
     font-family: HiraginoSans-W4;
     color: #ffffff;
     text-align: center;
-    padding-top: 20px;
-    position: relative;
-    top: -500px;
+    padding-top: 1%;
     z-index: 1;
     text-shadow: 1px 1px 2px #999999;
 }
 
 .top-img-btn {
     width: 510px;
-    padding-top: 100px;
     display: flex;
     justify-content: space-between;; /*均等配置*/
     margin: 0 auto;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
-    position: relative;
-    top: -500px;
+    padding-top: 5%;
     z-index: 1;
 }
 
@@ -600,11 +597,61 @@ nav ul li {
     height: 22px;
     margin-right: 15px;
 }
+@media (max-width: 1275px){
+    .top-img {
+        margin-bottom: 9%;
+    }
+}
 
+@media (max-width: 1000px){
+    .top-img {
+        margin-bottom: 5%;
+    }
+    .top-img h2 {
+        display: block;
+    	font-size: 28px;
+        line-height: 1.2;
+        letter-spacing: 0.6px;
+        margin-top: -7%;
+        padding: 3px 2px;
+        text-align: center;
+    }
+    .top-img .sub-title {
+        font-size: 18px;
+        text-align: center;
+        padding: 10px 5px;
+        margin-left: 15px;
+        margin-top: -1%;
+    }
+    .top-img-btn {
+        width: 450px;
+        display: flex;
+        justify-content: space-between;; /*均等配置*/
+        margin: 0 auto;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
+        padding-top: 5%;
+        z-index: 1;
+    }
+    .btn-apply {
+        font-size: 14px;
+        border-radius: 5px;
+        background-color: #da6272;
+        padding: 7px 10px;
+        width: 180px;
+        text-align: center;
+    }
+    .btn-request {
+        font-size: 14px;
+        border-radius: 5px;
+        background-color: #44a5cb;
+        padding: 7px 10px;
+        width: 180px;
+        text-align: center;
+    }
+}
 
 @media (max-width: 767px){
     .top-img {
-        margin-bottom: -120px;
+        margin-bottom: 1%;
     }
 
     .top-img h2 {
@@ -612,17 +659,15 @@ nav ul li {
     	font-size: 16px;
         line-height: 1.2;
         letter-spacing: 0.6px;
-        top: -140px;
         padding: 3px 2px;
         text-align: center;
     }
 
     .top-img .sub-title {
         font-size: 12px;
-        top: -170px;
+        margin-top: -8%;
         text-align: center;
         padding: 10px 5px;
-        margin-left: 15px;
     }
 
     .top-img-btn {
@@ -632,9 +677,9 @@ nav ul li {
     .top-img-btn_sp {
         display: block;
         overflow: hidden;
-        padding: 5px 15px;
+        padding: 10px 15px;
         text-align: center;
-        margin: 0 auto -10px;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
+        margin: 15px auto -10px;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
     }
     .top-img-btn_sp .btn-apply {
         display: block;
@@ -647,7 +692,7 @@ nav ul li {
     .top-img-btn_sp .btn-request {
         display: block;
         float: right;
-        padding: 10px 15px;
+        padding: 10px 12px;
         width: 140px;
         text-align: center;
         font-size: 12px;
@@ -655,6 +700,14 @@ nav ul li {
 
     .top-img-btn-icon {
         margin-right: 5px;
+    }
+    .top-img-btn-icon-w {
+        width: 14px;
+        height: 14px;
+    }
+    .top-img-btn-icon-job {
+        width: 14px;
+        height: 14px;
     }
 }
 
@@ -878,6 +931,8 @@ nav ul li {
         width: 100%;
         padding: 0 10px;
         box-sizing: border-box;
+        justify-content: center;
+        text-align: center;
     }
     .top-writer-item {
         margin-bottom: 10px;
