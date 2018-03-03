@@ -55,6 +55,10 @@ a:hover{
     margin-bottom: 10px;
 }
 
+.mb15 {
+    margin-bottom: 15px;
+}
+
 .mt10 {
     margin-top: 10px;
 }
@@ -541,7 +545,7 @@ nav ul li {
     display: flex;
     justify-content: space-between;; /*均等配置*/
     margin: 0 auto;   /* text-alineはインライン要素にしか効かない、かつtacだと2つのボタンがかぶる */
-    padding-top: 5%;
+    padding-top: 7%;
     z-index: 1;
 }
 
@@ -1984,7 +1988,7 @@ footer .end-copy{
 
 /*--プロフィールTOP--*/
 .writerProfile-top {
-    height: 320px;
+    height: 400px;
     width: 100%;
     background: url(../img/page-writer-profile/pexels-photo-129441.jpeg) center  center no-repeat;
     background-size: cover;
@@ -1994,9 +1998,9 @@ footer .end-copy{
 
 /*背景透過用！*/
 .bg-mask {
-  height: 100%;
-  background: rgba(255,255,255,0.7);
-  padding: 40px 100px;
+    height: 100%;
+    background: rgba(255,255,255,0.7);
+    padding: 40px 100px;
 }
 
 .writerProfile-top img {
@@ -2023,13 +2027,21 @@ footer .end-copy{
     margin-bottom: 20px;
 }
 
+.writer-name-san {
+    font-size: 16px;
+    margin-left: 15px;
+}
 .writerProfile-top-catch {
-    font-family: HiraginoSans-W4;
-	font-size: 17px;
+    font-family: HiraginoSans-W3;
+	font-size: 16px;
 	line-height: 1.7;
 	text-align: left;
     color: #4a4a4a;
     margin-bottom: 20px;
+}
+
+.writerProfile-top-info .writer-Level-inner {
+    overflow: hidden;
 }
 
 .writerProfile-top-star {
@@ -2038,11 +2050,25 @@ footer .end-copy{
     font-size: 14px;
     text-align: left;
     color: #4a4a4a;
+    float: left;
+}
+
+.writer-Level-inner .writer-history {
+    font-family: HiraginoSans-W4;
+    font-size: 14px;
+    float: left;
+    margin-left: 30px;
 }
 
 .writerProfile-top-box {
-    overflow: hidden; /*floatの親要素に入れる*/
+    overflow: hidsden; /*floatの親要素に入れる*/
+    margin-top: 2.5%;
+    border-top: 3px dashed #ffffff;
+    border-bottom: 3px dashed #ffffff;
+    padding: 2% 2% 13%;
+    border-radius: 5px;
 }
+
 
 .writerProfile-top-item-left {
     float: left;
@@ -2055,10 +2081,16 @@ footer .end-copy{
 
 .writerProfile-top-box p {
     margin-bottom: 5px;
-    font-family: HiraginoSans-W4;
+    font-family: HiraginoSans-W3;
     font-size: 14px;
     text-align: left;
     color: #4a4a4a;
+    line-height: 1.6;
+}
+
+.writerProfile-top-box .data-font {
+    font-size: 17px;
+    font-family: HiraginoSans-W4;
 }
 
 /*--プロフィール本体--*/
@@ -2096,6 +2128,16 @@ footer .end-copy{
 .writerProfile-tag-item {
     border-radius: 5px;
     background-color: #f5c23c;
+    display: inline;
+    padding: 5px 25px;
+    color: #ffffff;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.writerProfile-tag-item-ctgry {
+    border-radius: 5px;
+    background-color: #40bfb0;
     display: inline;
     padding: 5px 25px;
     color: #ffffff;
@@ -2274,7 +2316,7 @@ footer .end-copy{
 .writerProfile-recomend-box a {
     width: 20%;
     background-color: #ffffff;
-    padding: 12px;
+    padding: 15px 15px 15px;
 }
 
 .writerProfile-recomend-box a:hover {
@@ -2297,14 +2339,29 @@ footer .end-copy{
     margin-bottom: 15px;
 }
 
-.writerProfile-recomend-text {
+.writerProfile-catch-text {
+    font-family: HiraginoSans-W5;
+    color: #4a4a4a;
+}
+.writerProfile-reccomend-star {
+    margin-bottom: 8px;
     font-family: HiraginoSans-W4;
-	font-size: 12px;
-	line-height: 1.7;
+    font-size: 14px;
+    text-align: left;
+    color: #4a4a4a;
+    margin-top: 20px;
+}
+
+
+.writerProfile-page-reco_text {
+    font-family: HiraginoSans-W4;
+	font-size: 13px;
+	line-height: 1.6;
 	text-align: left;
 	color: #828282;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
+
 
 
 /*------ライターフッター　-----------*/
@@ -3192,7 +3249,7 @@ footer .end-copy{
     border-radius: 5px;
     background-color: #c4eaf9;
     width: 75%;
-    padding: 15px;
+    padding: 20px;
 }
 
 .mypage-message-writer-item div:before{
@@ -3215,7 +3272,7 @@ footer .end-copy{
 
 .mypage-message-writer-item > div > .massage {
     font-family: HiraginoSans-W3;
-    font-size: 12px;
+    font-size: 14px;
     color: #4a4a4a;
 }
 
@@ -3233,7 +3290,7 @@ footer .end-copy{
     border-radius: 5px;
     background-color: #ffffff;
     width: 75%;
-    padding: 15px;
+    padding: 20px;
 }
 
 .mypage-message-media-item div:before {
@@ -3256,7 +3313,7 @@ footer .end-copy{
 
 .mypage-message-media-item > div > .massage {
     font-family: HiraginoSans-W3;
-    font-size: 12px;
+    font-size: 14px;
     color: #4a4a4a;
 }
 
@@ -3330,7 +3387,7 @@ footer .end-copy{
 
 .mypage-message-media-item-notFix > div > .massage {
     font-family: HiraginoSans-W3;
-    font-size: 12px;
+    font-size: 14px;
     color: #4a4a4a;
 }
 
