@@ -941,7 +941,10 @@ nav ul li {
 
 /*------ シゴトのカテゴリからライターを探す ------ */
 .top-sec-back-categry {
-    background: url(../img/page-top/section-back/memphis-colorful.png) center  center repeat rgba(0,0,0,0.0);
+    background:
+    /* url(../img/page-top/section-back/memphis-colorful.png) center  center repeat rgba(0,0,0,0.0);
+    */
+    url(../img/page-request/diagonal_striped_brick.png) center  center repeat rgba(0,0,0,0.0);
     background-size: auto;
     padding: 40px 70px;
     background-attachment: fixed;
@@ -1089,7 +1092,9 @@ nav ul li {
 
 /*------新着のシゴト一覧 -------------- */
 .top-sec-back-newJob {
-    background: url(../img/page-top/section-back/vintage-leaves.png) center  center repeat;
+    background:
+    /* url(../img/page-top/section-back/vintage-leaves.png) center  center repeat;*/
+    url(../img/page-request/diagonal_striped_brick.png) center  center repeat;
     background-size: auto;
     padding: 40px 70px;
     background-attachment: fixed;
@@ -1279,7 +1284,9 @@ nav ul li {
 
 /*------シゴトの流れ -------------- */
 .top-sec-back-jobFlow {
-    background: url(../img/page-top/section-back/doodles.png) center  center repeat;
+    background:
+    /* url(../img/page-top/section-back/doodles.png) center  center repeat; */
+    url(../img/page-request/diagonal_striped_brick.png) center  center repeat;
     background-size: auto;
     padding: 40px 70px;
     background-attachment: fixed;
@@ -1599,7 +1606,7 @@ footer .end-copy{
 
 .writerList-img h2 {
 	font-size: 32px;
-    font-family: HiraginoSans-W6;
+    font-family: HiraginoSans-W5;
 	text-align: center;
 	color: #ffffff;
     padding-top: 65px;
@@ -2659,10 +2666,16 @@ footer .end-copy{
 .mypage-top {
     height: 320px;
     width: 100%;
-    background: url(../img/page-mypage/low-poly-texture-12.png) center  center no-repeat;
-    background-size: cover;
+    background:/* url(../img/page-mypage/low-poly-texture-12.png) center  center no-repeat;*/
+    url(../img/pattern/gridme.png);
     background-attachment: fixed;
     overflow: hidden; /*floatの親要素に入れる*/
+}
+
+.mypage-top-mask {
+    height: 100%;
+    background: rgba(255,255,255,0.2);
+    padding: 40px 100px;
 }
 
 .maypage-top-inner {
@@ -3049,7 +3062,9 @@ footer .end-copy{
 .mypageJob-top {
     height: 270px;
     width: 100%;
-    background: url(../img/page-top/section-back/memphis-colorful.png);
+    background:
+    /* url(../img/page-top/section-back/memphis-colorful.png)*/
+    url(../img/pattern/gridme.png);
     background-attachment: fixed;
     overflow: hidden; /*floatの親要素に入れる*/
 }
@@ -3114,7 +3129,7 @@ footer .end-copy{
 .mypageJob-top-info-right p {
     float: left;
     border: 0.5px solid #979797;
-    background-color: #fffefe;
+    background-color: #ffffff;
     font-family: HiraginoSans-W4;
 	font-size: 15px;
 	color: #5e5e5f;
