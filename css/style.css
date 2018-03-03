@@ -601,7 +601,7 @@ nav ul li {
     height: 22px;
     margin-right: 15px;
 }
-@media (max-width: 1275px){
+@media (max-width: 1400px){
     .top-img {
         margin-bottom: 9%;
     }
@@ -794,7 +794,7 @@ nav ul li {
 }
 
 .top-sec-h2 {
-    font-size: 26px;
+    font-size: 28px;
     font-family: HiraginoSans-W6;
     font-weight: bold;
     text-align: center;
@@ -804,7 +804,7 @@ nav ul li {
 
 .top-sec-about {
     font-family: HiraginoSans-W3;
-	font-size: 16px;
+	font-size: 17px;
 	text-align: center;
 	color: #4a4a4a;
     margin-bottom: 40px;
@@ -977,10 +977,10 @@ nav ul li {
 }
 
 .top-sec-back-categry section a {
-    font-size: 12px;
+    font-size: 30px;
     font-family: HiraginoSans-W6;
     display: block;
-    padding: 38px 0 ;
+    padding: 30px 0 ;
     color: #828282;
 }
 
@@ -995,13 +995,12 @@ nav ul li {
 
 .top-sec-back-categry section:hover {
     border: none;
-    margin: 0.5px;
-    background-color: #40bfb0;
-    color: #ffffff;
+    margin: -5.5px;
+    border: 6px solid #40bfb0;
 }
 
 .top-sec-back-categry section a:hover {
-    color: #ffffff;
+    color: #40bfb0;
 }
 
 @media (max-width: 767px){
@@ -1082,11 +1081,12 @@ nav ul li {
         width: 100%;  /*幅の最大値を指定し、広げすぎない*/
         box-sizing: border-box;
         padding: 0px 5px;
+        justify-content: center;
     }
     .top-sec-janle-item section {
         width: 130px;
         height: 100px;
-        margin: 5px 5px;
+        margin: 20px 5px;
     }
 }
 
@@ -1121,10 +1121,10 @@ nav ul li {
 
 .job-box-icatch p {
     width: 200px;
-    height: 25px;
-    background-color: #da6272;
+    height: 30px;
+    background-color: #979797;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     color: #ffffff;
     line-height: 2;
 }
@@ -1239,7 +1239,7 @@ nav ul li {
 	background-color: #da6272;
     writing-mode: vertical-lr;
     text-orientation: sideways;
-    height: 130px;
+    height: 190px;
     width: 35px;
     float: left;
     color: #ffffff;
@@ -1263,8 +1263,8 @@ nav ul li {
 }
 .about-merit-box section p {
     font-family: HiraginoSans-W3;
-    font-size: 12px;
-    line-height: 1.25;
+    font-size: 14px;
+    line-height: 1.4s;
     text-align: left;
     color: #828282;
 }
@@ -1315,22 +1315,22 @@ nav ul li {
 
 .top-jobFlow section h3 {
     font-family: HiraginoSans-W6;
-    font-size: 17px;
+    font-size: 18px;
     color: #40bfb0;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: center;
 }
 
 .top-jobFlow section img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 15px;
 }
 
 .top-jobFlow section p {
     font-family: HiraginoSans-W3;
-    font-size: 12px;
-    line-height: 1.33;
+    font-size: 14px;
+    line-height: 1.6;
     text-align: left;
     color: #5e5e5f;
 }
@@ -1361,6 +1361,7 @@ nav ul li {
 .top-question-box {
     display: flex;
     justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
 
     max-width: 900px;  /*幅の最大値を指定し、広げすぎない*/
@@ -1372,12 +1373,13 @@ nav ul li {
 }
 
 .top-question-item {
-    width: 30vw;
-    margin-bottom: 30px;
+    width: 30%;
+    margin-bottom: 50px;
+    margin-right: 30px;
 }
 
 .top-question-item h3 {
-    font-size: 17px;
+    font-size: 18px;
     text-align: left;
     color: #4a90e2;
     margin-bottom: 15px;
@@ -1385,7 +1387,7 @@ nav ul li {
 
 .top-question-item p {
     font-family: HiraginoSans-W3;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.7;
     text-align: left;
     color: #4b4c4d;
@@ -1428,7 +1430,7 @@ nav ul li {
 }
 
 .top-footer-userRegi-box a {
-    font-family: HiraginoSans-W6;
+    font-family: HiraginoSans-W5;
     font-size: 18px;
     color: #ffffff;
     line-height: 5.5;
@@ -1477,6 +1479,7 @@ nav ul li {
     overflow: hidden; /*floatの親要素に入れる*/
 }
 .footer-main-copy {
+    font-family: HiraginoSans-W4;
     font-size: 22px;
     text-align: center;
     color: #fffefe;
@@ -1491,7 +1494,7 @@ nav ul li {
 }
 
 .footer-main ul a {
-    font-size: 12px;
+    font-size: 14px;
 	text-align: left;
 	color: #ffffff;
     line-height: 3;
@@ -1508,7 +1511,7 @@ nav ul li {
 }
 
 .footer-form h3 {
-    font-size: 12px;
+    font-size: 17px;
     text-align: left;
     color: #ffffff;
     margin-bottom: 10px;
@@ -1520,11 +1523,11 @@ nav ul li {
     line-height: 2;
     margin-bottom: 5px;
     padding-left: 10px;
-    font-size: 11px;
+    font-size: 14px;
 }
 
 .footer-form textarea {
-    font-size: 11px;
+    font-size: 14px;
     border-radius: 3px;
     background-color: #ffffff;
     line-height: 2;
