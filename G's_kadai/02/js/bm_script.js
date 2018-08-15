@@ -29,12 +29,6 @@ $('#categoryAdd').on('click',function(){
     $('.categoryInput').val('');
 });
 
-
-//ブックマーク詳細フォーム なんとか綺麗にしたい・・
-let bookmark_form = '<ul class="main_detail hide"><li class="bookmark_form"><p><span>Title</span><input type="text" class="form_title"></p><p><span>Url</span><input type="text" class="form_url"></p><p><span>Memo</span><textarea name="" cols="100" rows="6" class="form_memo"></textarea></p><div class="registerBtn">登録</div></li></ul>';
-
-
-
 // //クリックされたら・・
 // $( '.categoryInput' ).keypress( function ( e ) {
 //     if ( e.which == 13 ) {
@@ -90,8 +84,10 @@ $( '.categoryInput' ).keypress( function ( e ) {
         //再度非表示にする
         $('.categoryInput').removeClass('open');
 
-        // --------------コンテンツ詳細の追加----------------------
-        $('.mainContent').append(bookmark_form);
+
+
+        //ーーーーーーーーフォームのoptionboxにカテゴリ名の追加ーーー
+        $('#categorySelect').append('<option value = category' + i+'>' + categoryObject.categoryName + '</option>');
 
         console.log(categoryObject[0]);
         return false;
@@ -111,14 +107,14 @@ if(get_i){
             $('.tab').append('<li id="category' + '_' + v + ' " ' + ' ' + 'class="category_item">' + v_category.categoryName + '</li>');
             // $('#category' + v).val(v_category);
 
-            // --------------コンテンツ詳細の追加----------------------
-            $('.mainContent').append(bookmark_form);
+
+            //formのoptionにカテゴリ名を表示
+            $('#categorySelect').append('<option value = category' + v+'>' + v_category.categoryName + '</option>');
+
         }
     }
 }
 var i = $('.category_item').length; //カテゴリの数を数えて初期値に入れる
-
-
 
 // /* オブジェクトの作り方メモ*/
 // var object1 = {'a':'11', 'b':'22'};
@@ -142,6 +138,3 @@ $('#bookmarkAdd').on('click',function(){
 $('#formCloseBtn').on('click',function(){
     $('#bookmarkform_modal').removeClass('open');
 });
-
-/*--カテゴリを選択肢まで引っ張る-- */
-//#categorySelect
