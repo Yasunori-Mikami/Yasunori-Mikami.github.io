@@ -78,9 +78,7 @@ $( '.categoryInput' ).keypress( function ( e ) {
         let categoryNo = 'category' + i;
 
         //カテゴリに基づく配列
-        let categoryObject = [
-            {'categoryName' : v_category}
-        ];
+        let categoryObject = {'categoryName' : v_category}; //ここに続けてbookmarkの配列をネストで入れていく
 
         //ローカルストレージに v を保存
         localStorage.setItem(categoryNo, JSON.stringify(categoryObject));
@@ -106,8 +104,11 @@ let get_i = parseInt(localStorage.getItem('i_count'),10); //10進法でカウン
 if(get_i){
     for (v = 4; v <= get_i; v++) {
         if(localStorage.getItem('category' + v)){
-            let v_category = localStorage.getItem('category' + v);
-            $('.tab').append('<li id="category' + '_' + v + ' " ' + ' ' + 'class="category_item">' + v_category + '</li>');
+            let v_category = JSON.parse(localStorage.getItem('category' + v));//JSONからの変換
+
+            //console.log(v_category.categoryName);
+            //v_category.categoryNameでキーの値を拾ってくる
+            $('.tab').append('<li id="category' + '_' + v + ' " ' + ' ' + 'class="category_item">' + v_category.categoryName + '</li>');
             // $('#category' + v).val(v_category);
 
             // --------------コンテンツ詳細の追加----------------------
@@ -119,9 +120,7 @@ var i = $('.category_item').length; //カテゴリの数を数えて初期値に
 
 
 
-
-
-// /* オブジェクトの作り方*/
+// /* オブジェクトの作り方メモ*/
 // var object1 = {'a':'11', 'b':'22'};
 // console.dir(object1);
 // console.dir(object1.a);
@@ -132,3 +131,17 @@ var i = $('.category_item').length; //カテゴリの数を数えて初期値に
 //     {'a':'11', 'b':'22'},
 //     {'a':'11', 'b':'22'}
 // ];
+
+
+/*----------ブックマークフォーム--------*/
+$('#bookmarkAdd').on('click',function(){
+    console.log('open');
+    $('#bookmarkform_modal').addClass('open');
+});
+
+$('#formCloseBtn').on('click',function(){
+    $('#bookmarkform_modal').removeClass('open');
+});
+
+/*--カテゴリを選択肢まで引っ張る-- */
+//#categorySelect

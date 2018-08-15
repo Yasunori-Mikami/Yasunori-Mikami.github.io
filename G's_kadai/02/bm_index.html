@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,28 @@
     <header>
         <h1><a href="#">BookMark LOg</a></h1>
     </header>
+    <div id="bookmarkform_modal" class="hide">
+        <div id="bookmark_form">
+            <h2>Add Bookmark</h2>
+            <p>
+                <span>カテゴリ</span>
+                <select name="" id="categorySelect"></select></p>
+            <p>
+                <span>Title</span>
+                <input type="text" class="form_title">
+            </p>
+            <p>
+                <span>Url</span>
+                <input type="text" class="form_url">
+            </p>
+            <p>
+                <span>Memo</span>
+                <textarea name="" cols="100" rows="6" class="form_memo"></textarea>
+            </p>
+            <div id="registerBtn">登録</div>
+            <div id="formCloseBtn">閉じる</div>
+        </div>
+    </div>
     <main>
         <div class="sidebar">
             <h2>category</h2>
@@ -24,6 +46,7 @@
             </ul>
             <input type="text" class="hide categoryInput">
             <p id="categoryAdd">+</p>
+            <div id="bookmarkAdd"><p>Add bookmark ></p></div>
         </div>
         <div class="mainContent">
             <ul class="main_detail">
@@ -49,21 +72,6 @@
                         <p class="bkmMemo">study_memomemomoemoemo</p>
                     </div>
                 </li>
-                <li class="bookmark_form">
-                        <p>
-                            <span>Title</span>
-                            <input type="text" class="form_title">
-                        </p>
-                        <p>
-                            <span>Url</span>
-                            <input type="text" class="form_url">
-                        </p>
-                        <p>
-                            <span>Memo</span>
-                            <textarea name="" cols="100" rows="6" class="form_memo"></textarea>
-                        </p>
-                        <div class="registerBtn">登録</div>
-                    </li>
             </ul>
             <ul class="main_detail hide">
                 <li>
@@ -77,38 +85,8 @@
                         <p class="bkmMemo">study_memomemomoemoemo</p>
                     </div>
                 </li>
-                <li class="bookmark_form">
-                    <p>
-                        <span>Title</span>
-                        <input type="text" class="form_title">
-                    </p>
-                    <p>
-                        <span>Url</span>
-                        <input type="text" class="form_url">
-                    </p>
-                    <p>
-                        <span>Memo</span>
-                        <textarea name="" cols="100" rows="6" class="form_memo"></textarea>
-                    </p>
-                    <div class="registerBtn">登録</div>
-                </li>
             </ul>
             <ul class="main_detail hide">
-                <li class="bookmark_form">
-                    <p>
-                        <span>Title</span>
-                        <input type="text" class="form_title">
-                    </p>
-                    <p>
-                        <span>Url</span>
-                        <input type="text" class="form_url">
-                    </p>
-                    <p>
-                        <span>Memo</span>
-                        <textarea name="" cols="100" rows="6" class="form_memo"></textarea>
-                    </p>
-                    <div class="registerBtn">登録</div>
-                </li>
             </ul>
             <ul class="main_detail hide">
                 <li>eeee</li>
