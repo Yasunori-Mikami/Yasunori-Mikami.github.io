@@ -14,41 +14,35 @@
         <h1><a href="#">BookMark LOg</a></h1>
     </header>
     <div id="bookmarkform_modal" class="hide">
-        <div id="bookmark_form">
+        <form id="bookmark_form">
             <h2>Add Bookmark</h2>
             <p>
                 <span>カテゴリ</span>
                 <select name="" id="categorySelect">
                     <option value="category1">IT</option>
-                    <option value="category2">デザイン</option>
-                    <option value="category3">プログラミング</option>
-                    <option value="category4">グルメ</option>
                 </select>
             </p>
             <p>
                 <span>Title</span>
-                <input type="text" class="form_title">
+                <input type="text" id="form_title">
             </p>
             <p>
                 <span>Url</span>
-                <input type="text" class="form_url">
+                <input type="text" id="form_url">
             </p>
             <p>
                 <span>Memo</span>
-                <textarea name="" cols="100" rows="6" class="form_memo"></textarea>
+                <textarea name="" cols="100" rows="6" id="form_memo"></textarea>
             </p>
             <div id="registerBtn">登録</div>
             <div id="formCloseBtn">閉じる</div>
-        </div>
+        </form>
     </div>
     <main>
         <div class="sidebar">
             <h2>category</h2>
             <ul class="tab">
                 <li id="category_1 select" class="category_item">IT</li>
-                <li id="category_2" class="category_item">デザイン</li>
-                <li id="category_3" class="category_item">プログラミング</li>
-                <li id="category_4" class="category_item">グルメ</li>
             </ul>
             <input type="text" class="hide categoryInput">
             <p id="categoryAdd">+</p>
@@ -78,25 +72,6 @@
                         <p class="bkmMemo">study_memomemomoemoemo</p>
                     </div>
                 </li>
-            </ul>
-            <ul class="main_detail hide">
-                <li>
-                    <div class="picBox">
-                        <img src="img/firet.png" alt="">
-                        <p class="registerDay">2017/06/28</p>
-                    </div>
-                    <div class="textInfo">
-                        <p class="bkmTitle"><a href="" target="_blank">Bookmark Title</a></p>
-                        <p class="bkmUrl">URL</p>
-                        <p class="bkmMemo">study_memomemomoemoemo</p>
-                    </div>
-                </li>
-            </ul>
-            <ul class="main_detail hide">
-            </ul>
-            <ul class="main_detail hide">
-                <li>eeee</li>
-                <li>eeeee</li>
             </ul>
         </div>
     </main>

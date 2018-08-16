@@ -19,8 +19,6 @@ $(function() {
 
 
 //--------categryの追加------------------
-
-
 $('#categoryAdd').on('click',function(){
     $('.categoryInput').addClass('open');
     i = i + 1;
@@ -57,25 +55,30 @@ $('#categoryAdd').on('click',function(){
 //     }
 // });
 
+
+let v_category; //テキストエリアに入力されたデータ
+// let categoryObject;//カテゴリの配列宣言
+let categoryNo;//カテゴリID
+let allObject = {};//ここに続けてbookmarkの配列をネストで入れていく
+
 //クリックされたら(配列Ver)・・
 $( '.categoryInput' ).keypress( function ( e ) {
     if ( e.which == 13 ) {
-
-        //テキストエリアに入力されたデータ
-        let v_category = $('.categoryInput').val();
 
         //iの回数を保存したい
         //ローカルストレージに i を保存
         localStorage.setItem('i_count', i);
 
         //カテゴリID
-        let categoryNo = 'category' + i;
+        categoryNo = 'category' + i;
 
-        //カテゴリに基づく配列
-        let categoryObject = {'categoryName' : v_category}; //ここに続けてbookmarkの配列をネストで入れていく
+        v_category = $('.categoryInput').val();
+
+        //カテゴリ配列の追加
+        allObject.categoryObject = {'categoryName' : v_category};
 
         //ローカルストレージに v を保存
-        localStorage.setItem(categoryNo, JSON.stringify(categoryObject));
+        localStorage.setItem(categoryNo, JSON.stringify(allObject.categoryObject));
 
         // カテゴリ追加
         let category_item =  '<li id="category' + '_' + i + ' " ' + ' ' + 'class="category_item">' + v_category + '</li>' ;
@@ -87,9 +90,8 @@ $( '.categoryInput' ).keypress( function ( e ) {
 
 
         //ーーーーーーーーフォームのoptionboxにカテゴリ名の追加ーーー
-        $('#categorySelect').append('<option value = category' + i+'>' + categoryObject.categoryName + '</option>');
+        $('#categorySelect').append('<option value = category' + i+'>' + allObject.categoryObject.categoryName + '</option>');
 
-        console.log(categoryObject[0]);
         return false;
     }
 });
@@ -98,43 +100,70 @@ $( '.categoryInput' ).keypress( function ( e ) {
 //---カテゴリの数値----
 let get_i = parseInt(localStorage.getItem('i_count'),10); //10進法でカウント
 if(get_i){
-    for (v = 4; v <= get_i; v++) {
+    for (v = 1; v <= get_i; v++) {
         if(localStorage.getItem('category' + v)){
-            let v_category = JSON.parse(localStorage.getItem('category' + v));//JSONからの変換
+            let v_categoryLoad = JSON.parse(localStorage.getItem('category' + v));//JSONからの変換
 
             //console.log(v_category.categoryName);
             //v_category.categoryNameでキーの値を拾ってくる
-            $('.tab').append('<li id="category' + '_' + v + ' " ' + ' ' + 'class="category_item">' + v_category.categoryName + '</li>');
+            $('.tab').append('<li id="category' + '_' + v + ' " ' + ' ' + 'class="category_item">' + v_categoryLoad.categoryName + '</li>');
             // $('#category' + v).val(v_category);
 
 
             //formのoptionにカテゴリ名を表示
-            $('#categorySelect').append('<option value = category' + v+'>' + v_category.categoryName + '</option>');
+            $('#categorySelect').append('<option value = category' + v+'>' + v_categoryLoad.categoryName + '</option>');
 
         }
     }
 }
 var i = $('.category_item').length; //カテゴリの数を数えて初期値に入れる
 
-// /* オブジェクトの作り方メモ*/
-// var object1 = {'a':'11', 'b':'22'};
-// console.dir(object1);
-// console.dir(object1.a);
-// console.dir(object1['a']);
-
-// var object3 = [
-//     {'a':'11', 'b':'22'},
-//     {'a':'11', 'b':'22'},
-//     {'a':'11', 'b':'22'}
-// ];
 
 
 /*----------ブックマークフォーム--------*/
+//入力された値の変数
+let selectVal;
+let titleVal;
+let urlVal;
+let memoVal;
+
 $('#bookmarkAdd').on('click',function(){
     console.log('open');
     $('#bookmarkform_modal').addClass('open');
+
+    //選択・入力されたテキストのクリア
+    $('#categorySelect').val('');
+    $('#form_title').val('');
+    $('#form_url').val('');
+    $('#form_memo').val('');
 });
 
 $('#formCloseBtn').on('click',function(){
+    $('#bookmarkform_modal').removeClass('open');
+});
+
+
+//登録ボタンの入力時
+$('#registerBtn').on('click',function(){
+    selectVal = $("#categorySelect").val();
+    titleVal = $("#form_title").val();
+    urlVal = $("#form_url").val();
+    memoVal = $("#form_memo").val();
+
+    //ブックマークの配列の宣言,allObject配列にbookmarkItemを追加
+    allObject.bookmarkItem = {
+        'categoryID':selectVal,
+        'title':titleVal,
+        'url':urlVal,
+        'memo':memoVal
+    };
+
+    //ローカルに保存
+    if(selectVal == categoryNo){
+    };
+    localStorage.setItem(categoryNo, JSON.stringify(allObject));
+
+
+    alert('ブックマークの登録が完了しました');
     $('#bookmarkform_modal').removeClass('open');
 });
