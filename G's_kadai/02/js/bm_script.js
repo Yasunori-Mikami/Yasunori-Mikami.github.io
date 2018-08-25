@@ -1,21 +1,28 @@
 //タブの切り替え
-$(function() {
-    //参考URL:http://blog.three-co.jp/web/558/
-    //クリックしたときのファンクションをまとめて指定
-    $('.tab li').click(function() {
-        //.index()を使いクリックされたタブが何番目かを調べ、
-        //indexという変数に代入します。
-        var index = $('.tab li').index(this);
-        //コンテンツを一度すべて非表示にし、
-        $('.mainContent ul').css('display','none');
-        //クリックされたタブと同じ順番のコンテンツを表示します。
-        $('.mainContent ul').eq(index).css('display','block');
-        //一度タブについているクラスselectを消し、
-        $('.tab li').removeClass('select');
-        //クリックされたタブのみにクラスselectをつけます。
-        $(this).addClass('select');
+function tabFunction(){
+    $(function() {
+        //参考URL:http://blog.three-co.jp/web/558/
+        //クリックしたときのファンクションをまとめて指定
+        $('.tab li').click(function() {
+            //.index()を使いクリックされたタブが何番目かを調べ、
+            //indexという変数に代入します。
+            var index = $('.tab li').index(this);
+            //コンテンツを一度すべて非表示にし、
+            $('.mainContent ul').css('display','none');
+            //クリックされたタブと同じ順番のコンテンツを表示します。
+            $('.mainContent ul').eq(index).css('display','block');
+            //一度タブについているクラスselectを消し、
+            $('.tab li').removeClass('select');
+            //クリックされたタブのみにクラスselectをつけます。
+            $(this).addClass('select');
+        });
     });
+};
+//ロードしたら読み込み
+$(document).ready( function(){
+    tabFunction();
 });
+
 
 
 //--------categryの追加------------------
@@ -27,7 +34,33 @@ $('#categoryAdd').on('click',function(){
     $('.categoryInput').val('');
 });
 
+// //クリックされたら・・
+// $( '.categoryInput' ).keypress( function ( e ) {
+//     if ( e.which == 13 ) {
 
+//         //iの回数を保存したい
+//         //ローカルストレージに i を保存
+//         localStorage.setItem('i_count', i);
+
+//         //テキストエリアに入力されたデータ
+//         let v_category = $('.categoryInput').val();
+
+//         //ローカルストレージに v を保存
+//         localStorage.setItem('category' + i, v_category);
+
+//         // カテゴリ追加
+//         let category_item =  '<li id="category' + '_' + i + ' " ' + ' ' + 'class="category_item">' + v_category + '</li>' ;
+//         $('.tab').append(category_item);
+
+//         //再度非表示にする
+//         $('.categoryInput').removeClass('open');
+
+//         // --------------コンテンツ詳細の追加----------------------
+//         $('.mainContent').append(bookmark_form);
+
+//         return false;
+//     }
+// });
 
 
 let v_category; //テキストエリアに入力されたデータ
@@ -69,6 +102,8 @@ $( '.categoryInput' ).keypress( function ( e ) {
         //ーーーーーーーーフォームのoptionboxにカテゴリ名の追加ーーー
         $('#categorySelect').append('<option value = category' + i+'>' + allObject.categoryObject.categoryName + '</option>');
 
+        //タブ機能の実装
+        tabFunction();
 
         return false;
     }
@@ -184,7 +219,7 @@ var i = $('.category_item').length; //カテゴリの数を数えて初期値に
 // ✓(2) 配列の保存場所の指定（selectValで）
 // ✓(3) メインカラムに表示させる
 // (４) メインカラムで複数追加表示させる（上書き保存にしない）
-// (5) 非リロード時のタブの挙動
+// ✓(5) 非リロード時のタブの挙動 08/20
 // (6) 画像のスクレイピング
 // (7) タブの削除、修正機能
 // (8) 保存時間の表示

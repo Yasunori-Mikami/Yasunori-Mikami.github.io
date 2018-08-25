@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style_03.css">
+</head>
+<body>
+<header>
+    <div class="header"><h1>Chatime</h1></div>
+</header>
+<main>
+    <div id="mainColumn">
+    </div>
+    <div id="sidebar">
+        <div id="profile">
+            <p id="profImageBox">
+                <img src="img/yasunori_profile.jpg" alt="" id="profileImage">
+            </p>
+            <p><input type="text" id="userName" placeholder="Name"></p>
+        </div>
+        <div id="form">
+            <div class="form_box">
+                <p class="form_title">MESSAGE</p>
+                <p><textarea  id="message" cols="30" rows="12"></textarea></p>
+            </div>
+            <button id="submit">送る</button>
+        </div>
+        <p id="addChatBtn">+ チャットルームを作る</p>
+    </div>
+</main>
+<footer>
+    <p>@LINE風アプリ</p>
+</footer>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+
+<!--lodash js でのpostItemの出力-->
+<script type="text/template" id="postItem">
+    <div class="postItem">
+        <div class="profBox">
+            <img src="<%- profPic %>" alt="" class="mainPic">
+            <p class="mainName"><%- allData.name %></p>
+        </div>
+        <div class="MessageBox">
+            <div class="mainMessage"><%- allData.message %></div>
+            <div class="mainTime"><%- allData.Time %></div>
+        </div>
+    </div>
+</script>
+<script src="js/jquery-2.1.3.min.js"></script>
+
+<!--lodash js-->
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+<!--FIREBASE js-->
+<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+<script src="js/script_03.js"></script>
+</body>
+</html>
