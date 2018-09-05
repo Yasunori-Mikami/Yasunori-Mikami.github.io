@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/janken.css">
+  <link rel="stylesheet" href="js/dist/type.css">
+  <script src="js/jquery-2.1.3.min.js"></script>
+  <title>JAN KEN PON</title>
+</head>
+<body>
+  <audio autoplay loop id="music">
+        <source src="music/HOW_TO_PLAY.mp3" type="audio/mp3">
+  </audio>
+  <header>
+    <div class="catch">
+        <h1><a href="#start">JAN KEN PON</a></h1>
+        <p><span id="ityped-subtitle"></span></p>
+        <a href="#start"><img src="img/sort-down.png" alt="" class="downArrow"></a>
+    </div>
+  </header>
+  <main>
+    <section class="yourHand_container">
+        <div id="start"></div>
+        <h2>あなたの手を選ぶ</h2>
+        <ul id="hand_list">
+            <li id="gu_btn">ROCK (グー)<br><span>すべてを打ち砕く拳</span></li>
+            <li id="cho_btn">SCISSORS（チョキ）<br><span>すべてを切り裂く刃</span></li>
+            <li id="par_btn">PAPER（パー）<br><span>すべてを払う必殺ビンタ</span></li>
+        </ul>
+    </section>
+    <section class="stage">
+        <div class="stage_box">
+            <div class="palyerBox">
+                <img src="img/user_icon/man.png" alt="" class="user_icon">
+                <div class="player_status">
+                    <h3 class="player_title">YOU</h3>
+                    <p class="my_hp hp_color">HP 100 / 100</p>
+                </div>
+            </div>
+            <p id="myHand_img"></p>
+        </div>
+        <div class="stage_box">
+            <p id="judgemnt_start">VS</p>
+        </div>
+        <div class="stage_box">
+            <div class="palyerBox">
+                <img src="img/user_icon/devil.png" alt="" class="user_icon">
+                <div class="player_status">
+                    <h3 class="player_title">COMPUTER</h3>
+                    <p class="comp_hp hp_color">HP 150 / 150</p>
+                </div>
+            </div>
+            <p id="compHand_img"></p>
+            <p id="pc_hands"></p>
+        </div>
+    </section>
+    <p id="switch_stage">ステージを切り替える</p>
+    <div class="play_count">
+        <p>勝ち：<span id="win_num"></span> / <span class="total_num"></span>
+        </p>
+        <p>負け：<span id="lose_num"></span> / <span class="total_num"></span>
+        </p>
+        <p>引き分け：<span id="draw_num"></span> / <span class="total_num"></span>
+        </p>
+        <p>勝率：<span id="percent_win"></span></p>
+    </div>
+    <p class="reportBtn">プレイ成績を見る</p>
+    <section class="report">
+      <h2>プレイ成績</h2>
+      <table>
+          <tr>
+            <th></th>
+            <th><img src="img/yourHand/fist.png" alt="グー" class="report_handImage"></th>
+            <th><img src="img/yourHand/victory.png" alt="チョキ" class="report_handImage"></th>
+            <th><img src="img/yourHand/hold.png" alt="バー" class="report_handImage"></th>
+          </tr>
+          <tr id="">
+              <th>回数</th><!--回数-->
+              <td id="rock_total_num"></td>
+              <td id="cho_total_num"></td>
+              <td id="paper_total_num"></td>
+          </tr>
+          <tr id="report_win">
+              <th>勝率</th><!--勝率-->
+              <td id="percent_rock_win"></td>
+              <td id="percent_cho_win"></td>
+              <td id="percent_paper_win"></td>
+          </tr>
+          <tr id="report_lose">
+              <th>敗率</th><!--敗率-->
+              <td id="percent_rock_lose"></td>
+              <td id="percent_cho_lose"></td>
+              <td id="percent_paper_lose"></td>
+          </tr>
+          <tr id="report_draw">
+              <th>引分率</th><!--引き分け率-->
+              <td id="percent_rock_draw"></td>
+              <td id="percent_cho_draw"></td>
+              <td id="percent_paper_draw"></td>
+          </tr>
+      </table>
+      <a href="#" class="restartBtn">もう一度修行してから出直す</a>
+    </section>
+    <div>
+        <p class="last_commnent">じゃんけん、それは無限の可能性への探求である　by プロハンター ゴン = フリークス</p>
+    </div>
+  </main>
+  <footer>©2018 JAN KEN PON All Right Reserved</footer>
+  <script src="js/janken.js"></script>
+  <!-- サブキャッチコピー -->
+  <script src="js/dist/sub-catch.js"></script>
+  <script>
+    ityped.init("#ityped-subtitle")
+  </script>
+</body>
+</html>

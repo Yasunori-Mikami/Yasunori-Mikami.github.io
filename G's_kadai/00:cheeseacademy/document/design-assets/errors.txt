@@ -1,0 +1,18 @@
+[7/21/2018, 2:43:59 PM] layer "mainbg.png": Duplicate path: mainbg.png
+[7/21/2018, 2:43:59 PM] layer "about_04.jpg": Duplicate path: about_04.jpg
+[7/21/2018, 2:43:59 PM] layer "about_03.jpg": Duplicate path: about_03.jpg
+[7/21/2018, 2:43:59 PM] layer "about_02.jpg": Duplicate path: about_02.jpg
+[7/21/2018, 2:43:59 PM] layer "about_01.jpg": Duplicate path: about_01.jpg
+[7/21/2018, 2:43:59 PM] layer "news_img.jpg": Duplicate path: news_img.jpg
+[7/21/2018, 2:43:59 PM] layer "news_img.jpg": Duplicate path: news_img.jpg
+[7/21/2018, 2:43:59 PM] layer "dummy@cheeseacademy.tokyo": Unsupported extension: tokyo
+[7/21/2018, 2:43:59 PM] layer "dummy@cheeseacademy.tokyo": Unsupported extension: tokyo
+[7/21/2018, 2:43:59 PM] layer "mainbg.png": Duplicate path: mainbg.png
+[7/21/2018, 2:43:59 PM] layer "hero_image__mobile.jpg": Duplicate path: hero_image__mobile.jpg
+[7/21/2018, 2:43:59 PM] layer "header_logo__mobile.png": Duplicate path: header_logo__mobile.png
+[7/21/2018, 2:43:59 PM] layer "about_04.jpg": Duplicate path: about_04.jpg
+[7/21/2018, 2:43:59 PM] layer "about_03.jpg": Duplicate path: about_03.jpg
+[7/21/2018, 2:43:59 PM] layer "about_02.jpg": Duplicate path: about_02.jpg
+[7/21/2018, 2:43:59 PM] layer "about_01.jpg": Duplicate path: about_01.jpg
+[7/21/2018, 2:43:59 PM] layer "about_img__mobile.jpg": Duplicate path: about_img__mobile.jpg
+[7/21/2018, 2:44:35 PM] layer "Google Maps  縦横比率16:9 アイコンはlogo.png使用 サイズは小さくて OK": Expected end of input but "\u4F7F" found.

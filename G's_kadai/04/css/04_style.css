@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+header {
+    background-color: #008BBB;
+    padding: 15px 80px;
+}
+header h1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/*Google Maps*/
+/* Always set the map height explicitly to define the size of the div
+* element that contains the map. */
+#map {
+    height: 450px;
+    width: 700px;
+    margin: 20px;
+
+}
+/* Optional: Makes the sample page fill the window. */
+main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+footer {
+    text-align: center;
+    background-color: #008BBB;
+    color: #ffffff;
+    padding: 5px 0;
+    font-size: 10px;
+}
