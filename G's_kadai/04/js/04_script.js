@@ -1,3 +1,7 @@
+
+
+//---------------------MAP----------------------------------------------
+//------A 正なら実行
 function mapsInit(position){     //posiiton は引数→関数の中の緯度経度が入る
     const lat = position.coords.latitude; //緯度
     const lon = position.coords.longitude; //経度
@@ -27,15 +31,29 @@ function mapsInit(position){     //posiiton は引数→関数の中の緯度経
         //info windows--------------------
         //https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple
         var infowindow = new google.maps.InfoWindow({
-            content: '<div>ジーズアカデミー</div>'
+            content: '<div>YOU ARE HERE</div>'
         });
         //クリックされたら表示する
         // marker.addListener('click', function() {
         infowindow.open(map, marker);
         // });
     }
+
+    $('#streetView').html(initialize());
+    var panorama;
+    function initialize() {
+        panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('streetView'),
+            {
+            position: {lat: lat, lng: lon},
+            pov: {heading: 165, pitch: 0},
+            zoom: 1
+            });
+    }
+
 };
 
+//------B エラーなら実行
 function mapsError(error){
     let msg = '';
     if(error.code==1){
@@ -50,16 +68,18 @@ function mapsError(error){
     alert(msg);
 };
 
+//------C オプション設定
 const set = {
-    enableHightAccuracy: true,//ほとんどのケースでtrue 位置情報を性格に取得する
+    enableHightAccuracy: true,//ほとんどのケースでtrue 位置情報を正確に取得する
     timeout: 10000, //タイムアウトまで10000秒
     maximumAge: 1000
 };
 
+
+//-----D 実行する（常に現在地を取得し続ける）
 // //現在地をロード時に取得する
 // navigator.geolocation.getCurrentPosition(mapsInit,mapsError,set); //最後に実行
 
-//常に現在地を取得し続ける
 function initMap(){
     navigator.geolocation.watchPosition(mapsInit,mapsError,set); //最後に実行
 };
