@@ -11,6 +11,17 @@ header h1 {
 }
 
 
+/* Optional: Makes the sample page fill the window. */
+main {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.mainContents {
+    display: flex;
+}
+
 /*Google Maps*/
 /* Always set the map height explicitly to define the size of the div
 * element that contains the map. */
@@ -28,12 +39,32 @@ header h1 {
     background-color: #008BBB;
 }
 
-/* Optional: Makes the sample page fill the window. */
-main {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+
+/* ---------------操作ボタン------------- */
+.controls {
     display: flex;
+    margin: 15px 20px;
+}
+
+#nowBtn {
+    background-color: #008BBB;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+#nowBtn:hover {
+    opacity: 0.8;
+}
+
+#addressBtn {
+    background-color: #008BBB;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+#addressBtn:hover {
+    opacity: 0.8;
 }
 
 

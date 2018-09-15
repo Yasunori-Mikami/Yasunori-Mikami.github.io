@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+#canvas{
+    background-color: #333;
+    margin: 20px auto 20px;
+}
+
+header {
+    padding: 10px 30px;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #333;
+}
+
+main {
+    width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    text-align: center;
+    padding: 10px 10px;
+    color: #ffffff;
+    font-size: 10px;
+}

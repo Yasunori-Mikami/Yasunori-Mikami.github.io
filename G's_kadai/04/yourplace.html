@@ -11,8 +11,14 @@
 <body>
     <header><h1>Your Place</h1></header>
     <main>
-        <div id="map"></div>
-        <div id="streetView"></div>
+        <div class="mainContents">
+            <div id="map"></div>
+            <div id="streetView"></div>
+        </div>
+        <div class="controls">
+            <p id="nowBtn">現在地を取得する</p>
+            <p id="addressBtn"><input type="住所を入力する" placeholder="現在地を入力する"></p>
+        </div>
     </main>
     <footer>@Your Place</footer>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>

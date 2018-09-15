@@ -39,6 +39,7 @@ function mapsInit(position){     //posiiton は引数→関数の中の緯度経
         // });
     }
 
+    //----------------streetVew----------------------------------
     $('#streetView').html(initialize());
     var panorama;
     function initialize() {
@@ -83,6 +84,13 @@ const set = {
 function initMap(){
     navigator.geolocation.watchPosition(mapsInit,mapsError,set); //最後に実行
 };
+
+
+//---ボタン押しても再度実行----
+$('#nowBtn').on('click', function(){
+    // function initMap(){};
+    console.log('クリックされた！');
+});
 
 
 
