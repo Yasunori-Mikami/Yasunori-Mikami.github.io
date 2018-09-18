@@ -51,10 +51,12 @@ $(can).on('mousemove',ufoMove); //canvas上で動いたら
 
 
 //--------------------画面の右側にも的の画像を表示する-------------------------
-const enemyImage = $('<img>').attr('src','img/stamp10.png');
-enemyImage.on('load',function(){
-    ctx.drawImage(this,720,250);
-});
+// const enemyImage = $('<img>').attr('src','img/stamp10.png');
+// let enemyX = 400;
+// enemyImage.on('load',function(){
+//     ctx.drawImage(this,enemyX,250);
+// });
+// enemyX = enemyX -10;
 
 
 /*---------------------------
@@ -122,6 +124,7 @@ const shootBall = function(e){
 $(can).on('mousedown', shootBall);
 
 
+
 //弾を動かす
 //forEach文：配列の1つ1つに同じ命令を順番に行うことができる
 //配列名.forEach(function(ball){
@@ -141,6 +144,20 @@ setInterval(function(){
 },10)
 
 
+//------------弾速--------------------------------
+$('#lowBall').on('click',function(){
+    ballData.speed = 1;
+});
+$('#middleBall').on('click',function(){
+    ballData.speed = 3;
+});
+$('#highBall').on('click',function(){
+    ballData.speed = 10;
+});
+$('#beamBall').on('click',function(){
+    ballData.speed = 0.4;
+});
+
 
 //不要な弾は配列から削除する
 const deleteBall = function(){
@@ -158,19 +175,105 @@ setInterval(function(){
 
 
 
+//------------ステージ--------------------------------
 
-
-//円を出現させる
-ctx.fillStyle = "#0f0";//塗り潰し色の指定
-ctx.strokStyle = "#0ff";
-
-let count = 780;
+//----------下段----------------------------------
+//円1を出現させる
+let count1 = 200;
 setInterval(function(){
-    ctx.clearRect(count,480,40,20);
-    count--;
-    ctx.fillRect(count,480,40,20);
+    ctx.fillStyle = "#0f0";//塗り潰し色の指定
+    ctx.strokStyle = "#0ff";
+    if(count1 < - 50) {
+        count1 = 800;
+    }
+    ctx.clearRect(count1,480,40,20);
+    count1 = count1 - 2;
+    ctx.fillRect(count1,480,40,20);
 },20);
 // ctx.fillRect(100,100,20,20);
 // ctx.strokeRect(100,100,100,100);
 // ctx.clearRect(350,350,30,30);
+
+//円2を出現させる
+let count2 = 400;
+setInterval(function(){
+    if(count2 < - 150) {
+        count2 = 800;
+    }
+    ctx.clearRect(count2,440,150,60);
+    count2 = count2 -2;
+    ctx.fillRect(count2,440,150,60);
+},20);
+
+//円3を出現させる
+let count3 = 780;
+setInterval(function(){
+    if(count3 < - 50) {
+        count3 = 800;
+    }
+    ctx.clearRect(count3,480,40,20);
+    count3 = count3 -1.5;
+    ctx.fillRect(count3,480,40,20);
+},20);
+
+let count4 = 200;
+setInterval(function(){
+    if(count4 < - 100) {
+        count4 = 800;
+    }
+    ctx.clearRect(count4,200,80,10);
+    count4 = count4 -2;
+    ctx.fillRect(count4,200,80,10);
+},20);
+
+let count5 = 600;
+setInterval(function(){
+    if(count5 < - 100) {
+        count5 = 800;
+    }
+    ctx.clearRect(count5,380,80,10);
+    count5 = count5 -3;
+    ctx.fillRect(count5,380,80,10);
+},20);
+
+
+//----------上段----------------------------------
+//円1を出現させる
+let count1_up = 100;
+setInterval(function(){
+    ctx.fillStyle = "#0f0";//塗り潰し色の指定
+    ctx.strokStyle = "#0ff";
+    if(count1_up < - 50) {
+        count1_up = 800;
+    }
+    ctx.clearRect(count1_up,0,40,20);
+    count1_up = count1_up - 2;
+    ctx.fillRect(count1_up,0,40,20);
+},20);
+// ctx.fillRect(100,100,20,20);
+// ctx.strokeRect(100,100,100,100);
+// ctx.clearRect(350,350,30,30);
+
+//円2を出現させる
+let count2_up = 200;
+setInterval(function(){
+    if(count2_up < - 100) {
+        count2_up = 800;
+    }
+    ctx.clearRect(count2_up,0,80,90);
+    count2_up = count2_up -2;
+    ctx.fillRect(count2_up,0,80,90);
+},20);
+
+//円3を出現させる
+let count3_up = 600;
+setInterval(function(){
+    if(count3_up < - 50) {
+        count3_up = 800;
+    }
+    ctx.clearRect(count3_up,0,40,20);
+    count3_up = count3_up -2;
+    ctx.fillRect(count3_up,0,40,20);
+},20);
+
 
