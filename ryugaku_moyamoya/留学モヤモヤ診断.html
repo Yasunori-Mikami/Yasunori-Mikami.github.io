@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>留学モヤモヤ診断 | SchoolWith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%;width:100%}
+body{font-family:'Noto Sans JP',sans-serif;background:#f0f7ff;overflow-x:hidden}
+
+.app{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px}
+
+/* Transitions */
+.screen-enter{animation:slideIn .4s cubic-bezier(.22,.61,.36,1) both}
+.screen-exit{animation:slideOut .3s cubic-bezier(.55,0,1,.45) both}
+@keyframes slideIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes slideOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(-40px)}}
+.fade-in{animation:fadeIn .5s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+/* START SCREEN */
+.start-wrap{width:100%;max-width:480px;text-align:center}
+.brand{display:flex;align-items:center;justify-content:center;gap:6px;margin-bottom:24px}
+.brand-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:20px;color:#1a1a1a}
+.brand-logo span{color:#00AEEF}
+.start-card{background:#fff;border-radius:28px;padding:36px 28px 32px;box-shadow:0 8px 40px rgba(0,174,239,.12)}
+.start-emoji{font-size:64px;line-height:1;margin-bottom:16px}
+.start-tag{display:inline-block;background:#00AEEF;color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:99px;margin-bottom:12px}
+.start-title{font-size:28px;font-weight:900;color:#1a1a1a;line-height:1.3;margin-bottom:10px}
+.start-subtitle{font-size:14px;color:#666;line-height:1.7;margin-bottom:28px}
+.start-meta{display:flex;justify-content:center;gap:16px;margin-bottom:28px}
+.meta-item{display:flex;align-items:center;gap:5px;font-size:12px;color:#888;font-weight:500}
+.btn-start{width:100%;background:linear-gradient(135deg,#00AEEF,#0090d0);color:#fff;border:none;border-radius:16px;padding:18px;font-size:17px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 4px 20px rgba(0,174,239,.35)}
+.btn-start:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,174,239,.45)}
+.btn-start:active{transform:translateY(0)}
+
+/* QUESTION SCREEN */
+.q-wrap{width:100%;max-width:520px}
+.progress-bar-wrap{margin-bottom:20px}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.progress-label{font-size:12px;font-weight:700;color:#00AEEF}
+.progress-count{font-size:12px;color:#999;font-weight:500}
+.progress-track{height:6px;background:#e2eef8;border-radius:99px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#00AEEF,#7dd3fc);border-radius:99px;transition:width .5s cubic-bezier(.22,.61,.36,1)}
+.q-card{background:#fff;border-radius:24px;padding:28px 24px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.q-number{font-size:11px;font-weight:700;color:#00AEEF;letter-spacing:.1em;margin-bottom:8px}
+.q-text{font-size:19px;font-weight:700;color:#1a1a1a;line-height:1.5;margin-bottom:6px}
+.q-hint{font-size:12px;color:#aaa;margin-bottom:22px}
+.choices{display:grid;gap:10px}
+.choices-2{grid-template-columns:1fr 1fr}
+.choices-1{grid-template-columns:1fr}
+.choice-btn{background:#f7fafd;border:2px solid transparent;border-radius:16px;padding:14px 16px;cursor:pointer;transition:all .18s;text-align:left;display:flex;align-items:center;gap:12px;font-family:'Noto Sans JP',sans-serif}
+.choice-btn:hover{background:#e8f6fd;border-color:#00AEEF}
+.choice-btn.selected{background:#e0f5ff;border-color:#00AEEF;box-shadow:0 0 0 4px rgba(0,174,239,.1)}
+.choice-emoji{font-size:26px;line-height:1;flex-shrink:0}
+.choice-text{font-size:14px;font-weight:600;color:#1a1a1a;line-height:1.4}
+.choice-sub{font-size:11px;color:#888;font-weight:400;margin-top:2px}
+.btn-next{width:100%;margin-top:16px;background:#00AEEF;color:#fff;border:none;border-radius:14px;padding:16px;font-size:15px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:all .18s;box-shadow:0 3px 12px rgba(0,174,239,.3)}
+.btn-next:disabled{background:#cce9f7;box-shadow:none;cursor:default}
+.btn-next:not(:disabled):hover{background:#0090d0;transform:translateY(-1px)}
+.btn-back{background:none;border:none;color:#aaa;font-size:13px;font-weight:500;cursor:pointer;font-family:'Noto Sans JP',sans-serif;padding:8px 0;margin-top:4px;width:100%;text-align:center}
+.btn-back:hover{color:#666}
+
+/* CALCULATING SCREEN */
+.calc-wrap{text-align:center;max-width:360px}
+.calc-spinner{width:72px;height:72px;border:5px solid #e0f5ff;border-top-color:#00AEEF;border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 24px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.calc-title{font-size:22px;font-weight:900;color:#1a1a1a;margin-bottom:8px}
+.calc-steps{display:flex;flex-direction:column;gap:8px;margin-top:20px}
+.calc-step{font-size:13px;color:#888;opacity:0;animation:fadeIn .4s ease forwards}
+.calc-step.active{color:#00AEEF;font-weight:700}
+
+/* RESULT SCREEN */
+.result-wrap{width:100%;max-width:480px}
+.result-header{border-radius:24px 24px 0 0;padding:32px 28px 28px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.result-header::before{content:'';position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:rgba(255,255,255,.1);border-radius:50%}
+.result-header::after{content:'';position:absolute;bottom:-60px;left:-30px;width:220px;height:220px;background:rgba(255,255,255,.07);border-radius:50%}
+.result-tag{display:inline-block;background:rgba(255,255,255,.25);font-size:11px;font-weight:700;letter-spacing:.1em;padding:4px 12px;border-radius:99px;margin-bottom:12px;position:relative;z-index:1}
+.result-emoji{font-size:60px;line-height:1;margin-bottom:12px;position:relative;z-index:1}
+.result-type-label{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;opacity:.85;margin-bottom:4px;position:relative;z-index:1}
+.result-name{font-size:30px;font-weight:900;line-height:1.2;margin-bottom:8px;position:relative;z-index:1}
+.result-catch{font-size:14px;opacity:.9;position:relative;z-index:1;line-height:1.5}
+.result-body{background:#fff;border-radius:0 0 24px 24px;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,.08)}
+.result-desc{font-size:14px;color:#444;line-height:1.8;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid #f0f0f0}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.result-stat{background:#f7fafd;border-radius:14px;padding:14px}
+.stat-label{font-size:10px;font-weight:700;color:#aaa;letter-spacing:.08em;margin-bottom:4px}
+.stat-value{font-size:14px;font-weight:700;color:#1a1a1a;line-height:1.4}
+.result-cta{background:linear-gradient(135deg,#00AEEF,#0090d0);color:#fff;border:none;border-radius:14px;width:100%;padding:18px;font-size:16px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;box-shadow:0 4px 20px rgba(0,174,239,.35);transition:all .18s;margin-bottom:10px}
+.result-cta:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,174,239,.45)}
+.btn-retry{background:none;border:2px solid #e5e5e5;border-radius:14px;width:100%;padding:14px;font-size:14px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;color:#888;transition:all .18s}
+.btn-retry:hover{border-color:#00AEEF;color:#00AEEF}
+.share-row{display:flex;gap:8px;margin-bottom:10px}
+.share-btn{flex:1;border:none;border-radius:12px;padding:12px;font-size:13px;font-weight:700;font-family:'Noto Sans JP',sans-serif;cursor:pointer;transition:all .18s}
+.share-x{background:#1a1a1a;color:#fff}
+.share-line{background:#06C755;color:#fff}
+.share-btn:hover{opacity:.85}
+
+/* TWEAKS */
+.tweaks-panel{position:fixed;bottom:20px;right:20px;background:#fff;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.15);padding:16px;width:200px;z-index:1000;display:none}
+.tweaks-panel.open{display:block}
+.tweaks-title{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.tweak-item{margin-bottom:10px}
+.tweak-label{font-size:11px;color:#888;margin-bottom:4px}
+.tweak-select{width:100%;font-size:12px;padding:5px 8px;border:1px solid #e5e5e5;border-radius:8px;font-family:'Noto Sans JP',sans-serif}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect, useRef } = React;
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"accentColor":"#00AEEF","bgColor":"#f0f7ff","showShareButtons":true}/*EDITMODE-END*/;
+
+// ── DATA ────────────────────────────────────────────────────────────────────
+
+const TYPES = [
+  { id:'ROI',    emoji:'💰', label:'ROI型',    name:'コスパ最強・費用対効果マスター',  catch:'限られた投資で最大リターンを狙う賢人',
+    color:'#f59e0b', grad:'linear-gradient(135deg,#f59e0b,#d97706)',
+    desc:'費用対効果を最重視し、計画的に英語力アップを狙うあなた。「高いお金を払えばいい」とは思わず、最小コストで最大の成果を出す方法を常に考えています。コツコツ型の努力家でもあり、目標を立てたら着実に達成できるタイプです。',
+    country:'🇵🇭 フィリピン（セブ島）/ 🇲🇹 マルタ', period:'1〜3ヶ月', cost:'30〜100万円', program:'マンツーマン集中英語コース' },
+  { id:'WKWK',  emoji:'🌏', label:'WKWK型',   name:'ワクワク止まらない・冒険家',      catch:'楽しむことが最強の武器！行動派のあなた',
+    color:'#f43f5e', grad:'linear-gradient(135deg,#f43f5e,#e11d48)',
+    desc:'「楽しい！」という感情こそが最大のモチベーション。行動力と好奇心が武器のあなたには、毎日が発見の連続になる留学スタイルがぴったり。思い立ったら即行動、失敗を恐れないマインドが、海外でどんどん英語力を伸ばしてくれます。',
+    country:'🇦🇺 オーストラリア（シドニー）/ 🇳🇿 ニュージーランド', period:'1年（ワーキングホリデー）', cost:'150〜250万円', program:'ワーキングホリデー＋語学学校' },
+  { id:'CAREER', emoji:'🚀', label:'CAREER型', name:'グローバルキャリア・戦略構築家',  catch:'転職・昇進を確実に射程に入れた戦略家',
+    color:'#8b5cf6', grad:'linear-gradient(135deg,#8b5cf6,#7c3aed)',
+    desc:'転職・キャリアアップへの強い意志を持つあなた。英語力だけでなく、海外での実務経験やグローバルなネットワーク構築まで視野に入れています。目的意識が高く、留学をキャリアへの確実な投資として位置づけられるタイプです。',
+    country:'🇺🇸 アメリカ（ニューヨーク）/ 🇨🇦 カナダ（トロント）', period:'6ヶ月〜1年', cost:'200〜400万円', program:'ビジネス英語・インターンシップ' },
+  { id:'STEADY', emoji:'📚', label:'STEADY型', name:'着実に積み上げる・努力の継続者',  catch:'ゆっくり確実、それが最速への近道',
+    color:'#10b981', grad:'linear-gradient(135deg,#10b981,#059669)',
+    desc:'焦らず丁寧に、確実に英語力を積み上げたいあなた。「近道より確実な道」を選ぶタイプで、コツコツと努力を続けることに喜びを感じます。しっかりとしたカリキュラムで段階的に学べる環境が、あなたの実力を最大限に引き出します。',
+    country:'🇨🇦 カナダ（バンクーバー）/ 🇮🇪 アイルランド（ダブリン）', period:'3〜6ヶ月', cost:'100〜200万円', program:'総合英語コース（一般英語）' },
+  { id:'DIVE',   emoji:'🌊', label:'DIVE型',   name:'文化の海に飛び込む・探求者',     catch:'語学より「本物の異文化体験」を追い求める',
+    color:'#0ea5e9', grad:'linear-gradient(135deg,#0ea5e9,#0284c7)',
+    desc:'語学の習得だけでなく、現地の文化・社会・人々の中に深く入り込みたいあなた。本物の「異文化体験」がなにより大切で、表面的な観光では満足できません。現地に溶け込むことで、自然に英語力と視野が広がっていくタイプです。',
+    country:'🇬🇧 イギリス（ロンドン）/ 🇺🇸 アメリカ（LA）', period:'6ヶ月〜1年', cost:'200〜350万円', program:'現地大学語学付属校・文化体験プログラム' },
+  { id:'SPEED',  emoji:'⚡', label:'SPEED型',  name:'短期集中でぶち抜く・スピード勝負', catch:'忙しい社会人でも結果を出す最速メソッド',
+    color:'#f97316', grad:'linear-gradient(135deg,#f97316,#ea580c)',
+    desc:'仕事や家庭で忙しくても、集中した時間で確実に英語力を伸ばせるあなた。「量より質」を信じ、マンツーマン授業など効率度の高い学習法で驚くほどのスピードで成長します。短期留学を繰り返すサイクル型の学習も向いています。',
+    country:'🇵🇭 フィリピン（セブ島・バギオ）/ 🇲🇹 マルタ', period:'2週間〜2ヶ月', cost:'20〜80万円', program:'マンツーマン集中コース（週25〜40コマ）' },
+  { id:'LIFE',   emoji:'🌿', label:'LIFE型',   name:'暮らすように学ぶ・スローライファー', catch:'英語が「生活の一部」になる豊かな日々',
+    color:'#22c55e', grad:'linear-gradient(135deg,#22c55e,#16a34a)',
+    desc:'「観光でも留学でもなく、暮らしたい」——そんな気持ちを持つあなた。英語を勉強するというより、英語で生活することを大切にします。自然豊かな場所で心にゆとりを持ちながら、じっくりと英語と向き合えるスタイルが理想です。',
+    country:'🇳🇿 ニュージーランド（クライストチャーチ）/ 🇦🇺 オーストラリア（ケアンズ）', period:'1年以上', cost:'200〜350万円', program:'ワーキングホリデー＋ゆったり語学コース' },
+  { id:'SOCIAL', emoji:'🎉', label:'SOCIAL型', name:'人との出会いで爆速成長・社交家',   catch:'友達との会話が最高の教科書！',
+    color:'#ec4899', grad:'linear-gradient(135deg,#ec4899,#db2777)',
+    desc:'友達との会話や新しい出会いが一番のモチベーション！多国籍な環境でのコミュニケーションを通じて、英語力と人間力を同時に磨けます。語学学校でたくさんの友達を作り、授業外でも積極的に話しかけていくタイプです。',
+    country:'🇨🇦 カナダ（トロント・バンクーバー）/ 🇦🇺 オーストラリア', period:'6ヶ月〜1年', cost:'150〜300万円', program:'総合英語＋課外アクティビティ充実校' },
+];
+
+// scores: [ROI, WKWK, CAREER, STEADY, DIVE, SPEED, LIFE, SOCIAL]
+const QUESTIONS = [
+  { id:1, text:'留学の一番の目的は？', hint:'正直な気持ちで選んでみてください',
+    choices:[
+      { emoji:'🚀', text:'転職・キャリアアップ', sub:'仕事に使いたい',   scores:[1,0,2,0,0,0,0,0] },
+      { emoji:'📖', text:'英語力をUPしたい',    sub:'スキルが欲しい',   scores:[0,0,0,2,0,1,0,0] },
+      { emoji:'✈️', text:'海外生活を楽しみたい', sub:'体験・冒険したい', scores:[0,2,0,0,0,0,1,0] },
+      { emoji:'💪', text:'自分を変えたい',       sub:'成長・挑戦したい', scores:[0,1,1,0,1,0,0,1] },
+    ]},
+  { id:2, text:'今の英語力は？', hint:'正直に選んでOKです！',
+    choices:[
+      { emoji:'😅', text:'ほぼゼロ',     sub:'中学英語レベル',      scores:[1,0,0,1,0,2,0,0] },
+      { emoji:'🙂', text:'少し話せる',   sub:'旅行会話くらいなら',  scores:[1,1,0,1,0,0,0,1] },
+      { emoji:'😊', text:'日常会話OK',   sub:'TOEIC 600前後',       scores:[0,1,1,1,1,0,1,1] },
+      { emoji:'😎', text:'仕事でも使える', sub:'TOEIC 700〜800+',  scores:[0,0,2,0,2,0,0,0] },
+    ]},
+  { id:3, text:'留学に使える予算は？', hint:'渡航費・生活費コミコミで考えてみて',
+    choices:[
+      { emoji:'💴', text:'50万円以下',   sub:'コスパ重視で',         scores:[1,0,0,0,0,2,0,0] },
+      { emoji:'💰', text:'50〜150万円',  sub:'しっかり投資したい',   scores:[2,0,0,1,0,1,0,0] },
+      { emoji:'💎', text:'150〜300万円', sub:'本格的にやりたい',     scores:[0,1,1,1,1,0,1,1] },
+      { emoji:'🏆', text:'300万円以上',  sub:'全力で投資する',       scores:[0,0,2,0,2,0,1,0] },
+    ]},
+  { id:4, text:'希望する留学期間は？', hint:'仕事の都合なども考えながら',
+    choices:[
+      { emoji:'⚡', text:'2週間〜1ヶ月',  sub:'短期集中型',     scores:[1,0,0,0,0,2,0,0] },
+      { emoji:'📅', text:'2〜3ヶ月',      sub:'ミドルレンジ',   scores:[2,0,0,1,0,1,0,0] },
+      { emoji:'🗓', text:'半年〜1年',     sub:'しっかり腰を据えて', scores:[0,1,2,1,1,0,0,1] },
+      { emoji:'🌏', text:'1年以上',       sub:'がっつり海外生活', scores:[0,2,0,0,1,0,2,0] },
+    ]},
+  { id:5, text:'現地でどう過ごしたい？', hint:'理想の留学ライフをイメージして',
+    choices:[
+      { emoji:'🎯', text:'勉強に集中',     sub:'学校ファースト！',   scores:[0,0,0,2,0,1,0,0] },
+      { emoji:'🍻', text:'現地の人と友達になる', sub:'交流を楽しみたい', scores:[0,1,0,0,1,0,0,2] },
+      { emoji:'🏖', text:'観光・趣味も満喫', sub:'楽しみたい！',     scores:[0,2,0,0,0,0,1,1] },
+      { emoji:'💼', text:'インターン・仕事も', sub:'実務経験を積む', scores:[0,0,2,0,1,0,0,0] },
+    ]},
+  { id:6, text:'あなたの性格は？', hint:'一番近いものを直感で選んで',
+    choices:[
+      { emoji:'📋', text:'計画的・コツコツ派', sub:'段取りを大切にする', scores:[2,0,0,1,0,1,0,0] },
+      { emoji:'⚡', text:'直感・行動力派',     sub:'まず動いてみる',     scores:[0,2,0,0,0,0,0,1] },
+      { emoji:'🤔', text:'慎重・じっくり派',   sub:'考えてから行動',     scores:[1,0,0,2,0,0,1,0] },
+      { emoji:'🎊', text:'社交的・人好き派',   sub:'出会いが大好き',     scores:[0,1,0,0,1,0,0,2] },
+    ]},
+  { id:7, text:'留学後のビジョンは？', hint:'漠然としていてもOK！',
+    choices:[
+      { emoji:'🏢', text:'外資系・グローバル企業へ', sub:'転職・昇進を狙う', scores:[1,0,2,0,0,0,0,0] },
+      { emoji:'💻', text:'英語×フリーランス・起業', sub:'独立したい',       scores:[0,1,0,0,2,0,0,0] },
+      { emoji:'🌐', text:'海外移住・ノマド生活',    sub:'自由に生きたい',   scores:[0,1,0,0,0,0,2,0] },
+      { emoji:'🤷', text:'まだはっきり決まってない', sub:'模索中です',       scores:[1,1,0,1,0,1,0,0] },
+    ]},
+  { id:8, text:'留学中の「理想の自分」は？', hint:'ワクワクする姿をイメージして！',
+    choices:[
+      { emoji:'🗣', text:'外国人とワイワイ',      sub:'英語でトークしまくる', scores:[0,1,0,0,0,0,0,2] },
+      { emoji:'📝', text:'毎日コツコツ勉強',      sub:'着実に成長する',       scores:[0,0,0,2,0,1,0,0] },
+      { emoji:'🌆', text:'都会でバリバリ活躍',    sub:'仕事も学業もこなす',   scores:[0,0,2,0,1,0,0,0] },
+      { emoji:'🌅', text:'のびのびスローライフ',  sub:'自然の中で充実した日々', scores:[0,1,0,0,0,0,2,0] },
+    ]},
+];
+
+// ── APP ─────────────────────────────────────────────────────────────────────
+
+function App() {
+  const saved = (() => { try { return JSON.parse(localStorage.getItem('moyamoya_state') || 'null'); } catch { return null; } })();
+  const [screen, setScreen] = useState(saved?.screen || 'start');
+  const [qIndex, setQIndex]  = useState(saved?.qIndex || 0);
+  const [answers, setAnswers] = useState(saved?.answers || []);
+  const [selected, setSelected] = useState(null);
+  const [resultType, setResultType] = useState(saved?.resultType || null);
+  const [animKey, setAnimKey] = useState(0);
+  const [calcStep, setCalcStep] = useState(0);
+  const [tweaks, setTweaks] = useState(TWEAK_DEFAULTS);
+  const [tweaksOpen, setTweaksOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem('moyamoya_state', JSON.stringify({ screen, qIndex, answers, resultType }));
+  }, [screen, qIndex, answers, resultType]);
+
+  useEffect(() => {
+    window.addEventListener('message', e => {
+      if (e.data?.type === '__activate_edit_mode')   setTweaksOpen(true);
+      if (e.data?.type === '__deactivate_edit_mode') setTweaksOpen(false);
+    });
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+  }, []);
+
+  function updateTweak(key, val) {
+    const next = { ...tweaks, [key]: val };
+    setTweaks(next);
+    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: next }, '*');
+  }
+
+  function startQuiz() { setScreen('quiz'); setQIndex(0); setAnswers([]); setSelected(null); setAnimKey(k=>k+1); }
+
+  function handleSelect(i) { setSelected(i); }
+
+  function handleNext() {
+    if (selected === null) return;
+    const newAnswers = [...answers, selected];
+    if (qIndex < QUESTIONS.length - 1) {
+      setAnswers(newAnswers); setSelected(null); setQIndex(qIndex+1); setAnimKey(k=>k+1);
+    } else {
+      // Calculate result
+      const totals = [0,0,0,0,0,0,0,0];
+      newAnswers.forEach((ans, qi) => {
+        QUESTIONS[qi].choices[ans].scores.forEach((s, ti) => { totals[ti] += s; });
+      });
+      const winIdx = totals.indexOf(Math.max(...totals));
+      setAnswers(newAnswers);
+      setScreen('calc');
+      setCalcStep(0);
+      let step = 0;
+      const iv = setInterval(() => {
+        step++;
+        setCalcStep(step);
+        if (step >= 4) { clearInterval(iv); setTimeout(() => { setResultType(TYPES[winIdx]); setScreen('result'); setAnimKey(k=>k+1); }, 600); }
+      }, 700);
+    }
+  }
+
+  function handleBack() {
+    if (qIndex === 0) { setScreen('start'); return; }
+    setAnswers(answers.slice(0, -1));
+    setSelected(answers[qIndex - 1] ?? null);
+    setQIndex(qIndex - 1);
+    setAnimKey(k=>k+1);
+  }
+
+  function handleRetry() { setScreen('start'); setResultType(null); setAnswers([]); setQIndex(0); }
+
+  const accent = tweaks.accentColor || '#00AEEF';
+
+  return (
+    <div className="app" style={{ background: tweaks.bgColor || '#f0f7ff' }}>
+      {screen === 'start' && <StartScreen key="start" onStart={startQuiz} accent={accent} />}
+      {screen === 'quiz'  && <QuizScreen  key={`q-${animKey}`} q={QUESTIONS[qIndex]} qIndex={qIndex} total={QUESTIONS.length} selected={selected} onSelect={handleSelect} onNext={handleNext} onBack={handleBack} accent={accent} />}
+      {screen === 'calc'  && <CalcScreen  key="calc" step={calcStep} />}
+      {screen === 'result'&& resultType && <ResultScreen key={`r-${animKey}`} type={resultType} onRetry={handleRetry} showShare={tweaks.showShareButtons} />}
+      <TweaksPanel open={tweaksOpen} tweaks={tweaks} onUpdate={updateTweak} />
+    </div>
+  );
+}
+
+// ── START ─────────────────────────────────────────────────────────────────
+
+function StartScreen({ onStart, accent }) {
+  return (
+    <div className="start-wrap fade-in">
+      <div className="brand">
+        <div className="brand-logo">School<span>With</span></div>
+      </div>
+      <div className="start-card">
+        <div className="start-emoji">🌍</div>
+        <div className="start-tag" style={{ background: accent }}>無料・2分でわかる</div>
+        <h1 className="start-title">留学モヤモヤ診断</h1>
+        <p className="start-subtitle">「留学したいけど何から始めれば…」<br/>8つの質問に答えるだけで、あなたにぴったりの<strong>留学タイプ</strong>と<strong>おすすめプラン</strong>がわかります！</p>
+        <div className="start-meta">
+          <span className="meta-item">✅ 全8問</span>
+          <span className="meta-item">⏱ 約2分</span>
+          <span className="meta-item">🎯 8タイプ診断</span>
+        </div>
+        <button className="btn-start" style={{ background: `linear-gradient(135deg,${accent},#0090d0)` }} onClick={onStart}>診断スタート →</button>
+      </div>
+    </div>
+  );
+}
+
+// ── QUIZ ──────────────────────────────────────────────────────────────────
+
+function QuizScreen({ q, qIndex, total, selected, onSelect, onNext, onBack, accent }) {
+  const pct = ((qIndex) / total) * 100;
+  return (
+    <div className="q-wrap screen-enter">
+      <div className="progress-bar-wrap">
+        <div className="progress-top">
+          <span className="progress-label" style={{ color: accent }}>Q{qIndex+1}. {q.text}</span>
+          <span className="progress-count">{qIndex+1} / {total}</span>
+        </div>
+        <div className="progress-track">
+          <div className="progress-fill" style={{ width: `${pct}%`, background: `linear-gradient(90deg,${accent},#7dd3fc)` }} />
+        </div>
+      </div>
+      <div className="q-card">
+        <div className="q-number" style={{ color: accent }}>QUESTION {qIndex+1}</div>
+        <div className="q-text">{q.text}</div>
+        <div className="q-hint">{q.hint}</div>
+        <div className="choices choices-2">
+          {q.choices.map((c, i) => (
+            <button key={i} className={`choice-btn${selected===i?' selected':''}`}
+              style={selected===i ? { borderColor: accent, background: accent+'18' } : {}}
+              onClick={() => onSelect(i)}>
+              <span className="choice-emoji">{c.emoji}</span>
+              <span>
+                <div className="choice-text">{c.text}</div>
+                <div className="choice-sub">{c.sub}</div>
+              </span>
+            </button>
+          ))}
+        </div>
+        <button className="btn-next" style={selected!==null ? { background: accent } : {}} disabled={selected===null} onClick={onNext}>
+          {qIndex < 7 ? '次の質問へ →' : '結果を見る 🎉'}
+        </button>
+        <button className="btn-back" onClick={onBack}>← {qIndex===0 ? 'トップに戻る' : '前の質問に戻る'}</button>
+      </div>
+    </div>
+  );
+}
+
+// ── CALC ──────────────────────────────────────────────────────────────────
+
+const CALC_MSGS = ['回答を分析中…','あなたの傾向を計算中…','最適なタイプを照合中…','留学プランを生成中…'];
+
+function CalcScreen({ step }) {
+  return (
+    <div className="calc-wrap fade-in">
+      <div className="calc-spinner" />
+      <div className="calc-title">診断しています…</div>
+      <div className="calc-steps">
+        {CALC_MSGS.map((m, i) => (
+          <div key={i} className={`calc-step${i <= step ? ' active' : ''}`} style={{ animationDelay: `${i*0.5}s`, opacity: i <= step ? 1 : 0 }}>{i <= step ? '✅' : '⬜'} {m}</div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ── RESULT ────────────────────────────────────────────────────────────────
+
+function ResultScreen({ type, onRetry, showShare }) {
+  const shareText = encodeURIComponent(`留学モヤモヤ診断の結果は「${type.label}：${type.name}」でした！\nあなたも診断してみて👇`);
+  return (
+    <div className="result-wrap fade-in">
+      <div className="result-header" style={{ background: type.grad }}>
+        <div className="result-tag">あなたのタイプは…</div>
+        <div className="result-emoji">{type.emoji}</div>
+        <div className="result-type-label">{type.label}</div>
+        <div className="result-name">{type.name}</div>
+        <div className="result-catch">{type.catch}</div>
+      </div>
+      <div className="result-body">
+        <p className="result-desc">{type.desc}</p>
+        <div className="result-grid">
+          <div className="result-stat">
+            <div className="stat-label">🌍 おすすめの国・都市</div>
+            <div className="stat-value">{type.country}</div>
+          </div>
+          <div className="result-stat">
+            <div className="stat-label">📅 おすすめ期間</div>
+            <div className="stat-value">{type.period}</div>
+          </div>
+          <div className="result-stat">
+            <div className="stat-label">💴 費用目安</div>
+            <div className="stat-value">{type.cost}</div>
+          </div>
+          <div className="result-stat">
+            <div className="stat-label">🎓 おすすめプログラム</div>
+            <div className="stat-value">{type.program}</div>
+          </div>
+        </div>
+        {showShare && (
+          <div className="share-row">
+            <button className="share-btn share-x" onClick={() => window.open(`https://twitter.com/intent/tweet?text=${shareText}`)}>𝕏 シェア</button>
+            <button className="share-btn share-line" onClick={() => window.open(`https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(location.href)}`)}>LINE シェア</button>
+          </div>
+        )}
+        <button className="result-cta" style={{ background: type.grad }} onClick={() => window.open('#')}>
+          無料で留学相談してみる →
+        </button>
+        <button className="btn-retry" onClick={onRetry}>もう一度診断する</button>
+      </div>
+    </div>
+  );
+}
+
+// ── TWEAKS ────────────────────────────────────────────────────────────────
+
+function TweaksPanel({ open, tweaks, onUpdate }) {
+  return (
+    <div className={`tweaks-panel${open ? ' open' : ''}`}>
+      <div className="tweaks-title">🎨 Tweaks</div>
+      <div className="tweak-item">
+        <div className="tweak-label">アクセントカラー</div>
+        <input type="color" value={tweaks.accentColor} onChange={e => onUpdate('accentColor', e.target.value)} style={{ width:'100%', height:32, border:'none', borderRadius:6, cursor:'pointer' }} />
+      </div>
+      <div className="tweak-item">
+        <div className="tweak-label">背景カラー</div>
+        <input type="color" value={tweaks.bgColor} onChange={e => onUpdate('bgColor', e.target.value)} style={{ width:'100%', height:32, border:'none', borderRadius:6, cursor:'pointer' }} />
+      </div>
+      <div className="tweak-item">
+        <div className="tweak-label">シェアボタン</div>
+        <select className="tweak-select" value={tweaks.showShareButtons ? 'true' : 'false'} onChange={e => onUpdate('showShareButtons', e.target.value === 'true')}>
+          <option value="true">表示する</option>
+          <option value="false">非表示</option>
+        </select>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
